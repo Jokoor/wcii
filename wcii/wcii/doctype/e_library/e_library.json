@@ -1,0 +1,67 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-12-17 09:34:48.398677",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "file_path",
+  "short_file_name",
+  "file_extension",
+  "file_size",
+  "file_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "file_path",
+   "fieldtype": "Data",
+   "label": "File Path"
+  },
+  {
+   "fieldname": "file_extension",
+   "fieldtype": "Data",
+   "label": "File Extension"
+  },
+  {
+   "fieldname": "file_size",
+   "fieldtype": "Data",
+   "label": "File Size"
+  },
+  {
+   "fieldname": "file_name",
+   "fieldtype": "Data",
+   "label": "File name"
+  },
+  {
+   "fieldname": "short_file_name",
+   "fieldtype": "Data",
+   "label": "Short File Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-23 18:11:11.613839",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "E-library",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,147 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:FEE-{####}",
+ "creation": "2023-12-05 04:23:03.022900",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "student",
+  "student_name",
+  "fee_type",
+  "column_break_wvsxm",
+  "academic_year",
+  "section_break_edakt",
+  "total_amount",
+  "column_break_fmhe6",
+  "paid_amount",
+  "outstanding_amount",
+  "status",
+  "amended_from",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "student",
+   "fieldtype": "Link",
+   "label": "Student",
+   "options": "Student"
+  },
+  {
+   "fetch_from": "student.first_name",
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "label": "Student Name"
+  },
+  {
+   "fieldname": "column_break_wvsxm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Fees",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_edakt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "options": "Company:company:default_currency",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "column_break_fmhe6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "amended_from.total_amount",
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "UNPAID\nPARTIALLY-PAID\nPAID"
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "academic_year",
+   "fieldtype": "Link",
+   "label": "Academic Year",
+   "options": "Academic Year"
+  },
+  {
+   "fieldname": "fee_type",
+   "fieldtype": "Select",
+   "label": "Fee Type",
+   "options": "ADMISSION\nTUITION\nEXAM\nLIBRARY\nOTHERS"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-13 19:36:05.337585",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Fees",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Unpaid"
+  },
+  {
+   "color": "Yellow",
+   "title": "Partially Paid"
+  },
+  {
+   "color": "Red",
+   "title": "Overdue"
+  },
+  {
+   "color": "Green",
+   "title": "Paid"
+  }
+ ]
+}

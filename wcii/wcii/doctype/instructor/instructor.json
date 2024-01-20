@@ -1,0 +1,217 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-12-10 11:48:13.913906",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ovm8h",
+  "enabled",
+  "section_break_nxpg3",
+  "first_name",
+  "middle_name",
+  "column_break_jz3tt",
+  "last_name",
+  "joining_date",
+  "image",
+  "personal_details_section",
+  "email_address",
+  "date_of_birth",
+  "blood_group",
+  "column_break_lw8op",
+  "mobile_number",
+  "gender",
+  "address_line_1",
+  "address_line_2",
+  "region",
+  "city",
+  "nationality",
+  "country",
+  "modules_tab",
+  "modules",
+  "exit_tab",
+  "section_break_fzg5d",
+  "date_of_leaving",
+  "leaving_certificate_number",
+  "column_break_ymffc",
+  "reason_for_leaving"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ovm8h",
+   "fieldtype": "Tab Break",
+   "label": " Instructor Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "section_break_nxpg3",
+   "fieldtype": "Section Break",
+   "label": "Basic Info"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "  First Name"
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fieldname": "column_break_jz3tt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "joining_date",
+   "fieldtype": "Data",
+   "label": "Joining Date"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "personal_details_section",
+   "fieldtype": "Section Break",
+   "label": "Personal Details"
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "blood_group",
+   "fieldtype": "Select",
+   "label": "Blood Group",
+   "options": "\nA+\nA-\nB+\nB-\nO+\nO-\nAB+\nAB-"
+  },
+  {
+   "fieldname": "column_break_lw8op",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality"
+  },
+  {
+   "fieldname": "modules_tab",
+   "fieldtype": "Tab Break",
+   "label": "Modules & Classes"
+  },
+  {
+   "fieldname": "modules",
+   "fieldtype": "Table",
+   "label": "Modules",
+   "options": "Course Modules"
+  },
+  {
+   "fieldname": "exit_tab",
+   "fieldtype": "Tab Break",
+   "label": "Exit"
+  },
+  {
+   "fieldname": "section_break_fzg5d",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date_of_leaving",
+   "fieldtype": "Data",
+   "label": "Date of Leaving"
+  },
+  {
+   "fieldname": "leaving_certificate_number",
+   "fieldtype": "Data",
+   "label": "Leaving Certificate Number"
+  },
+  {
+   "fieldname": "column_break_ymffc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reason_for_leaving",
+   "fieldtype": "Text",
+   "label": "Reason For Leaving"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Data",
+   "label": "Region",
+   "options": "\nBanjul\nNorth Bank Region\nLower River Region\nCentral River Region\nWest Coast Region\nUpper River Region"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-22 19:57:57.216771",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Instructor",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

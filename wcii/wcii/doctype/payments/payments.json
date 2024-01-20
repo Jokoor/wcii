@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PAY-{####}",
+ "creation": "2023-12-24 12:00:21.814713",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "fee",
+  "fee_type",
+  "student",
+  "column_break_na2lk",
+  "fee_amount",
+  "outstanding_amount",
+  "payment_details_section",
+  "paid_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "fee",
+   "fieldtype": "Link",
+   "label": "Fee",
+   "options": "Fees"
+  },
+  {
+   "fetch_from": "fee.fee_type",
+   "fieldname": "fee_type",
+   "fieldtype": "Data",
+   "label": "Fee Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_na2lk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "fee.student",
+   "fieldname": "student",
+   "fieldtype": "Data",
+   "label": "Student"
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payments",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "fee.outstanding_amount",
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount"
+  },
+  {
+   "fieldname": "payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
+  },
+  {
+   "fetch_from": "fee.total_amount",
+   "fieldname": "fee_amount",
+   "fieldtype": "Currency",
+   "label": "Fee Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-13 19:20:55.017707",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Payments",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

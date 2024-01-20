@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-12-05 03:51:47.627445",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "module",
+  "module_name",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "module",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Module",
+   "options": "Module"
+  },
+  {
+   "fetch_from": "course.course_name",
+   "fieldname": "module_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Module Name"
+  },
+  {
+   "default": "Incomplete",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Complete\nIncomplete"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-12-13 00:26:37.415017",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Course Modules",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

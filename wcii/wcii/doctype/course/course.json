@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CR-{###}",
+ "creation": "2023-12-05 03:46:16.028260",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "course_name",
+  "abbreviation",
+  "description",
+  "column_break_zeafb",
+  "level",
+  "section_break_fqecv",
+  "modules"
+ ],
+ "fields": [
+  {
+   "fieldname": "abbreviation",
+   "fieldtype": "Data",
+   "label": "Abbreviation"
+  },
+  {
+   "fieldname": "column_break_zeafb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "level",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Level",
+   "options": "\n4\n5"
+  },
+  {
+   "fieldname": "section_break_fqecv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "course_name",
+   "fieldtype": "Data",
+   "label": "Course Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "modules",
+   "fieldtype": "Table",
+   "label": "Modules",
+   "options": "Course Modules"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-13 00:45:09.893800",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Course",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "course_name"
+}

@@ -1,0 +1,264 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:AA001",
+ "creation": "2023-12-04 17:09:56.928038",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ovm8h",
+  "enabled",
+  "section_break_nxpg3",
+  "first_name",
+  "middle_name",
+  "column_break_jz3tt",
+  "last_name",
+  "joining_date",
+  "image",
+  "personal_details_section",
+  "email_address",
+  "date_of_birth",
+  "blood_group",
+  "column_break_lw8op",
+  "mobile_number",
+  "gender",
+  "nationality",
+  "address_line_1",
+  "address_line_2",
+  "region",
+  "country",
+  "tab_break_tab",
+  "guardian_details_section",
+  "guardians",
+  "program_courses_tab",
+  "course",
+  "section_break_wsd8i",
+  "modules",
+  "fees_tab",
+  "fees",
+  "exit_tab",
+  "section_break_fzg5d",
+  "date_of_leaving",
+  "leaving_certificate_number",
+  "column_break_ymffc",
+  "reason_for_leaving",
+  "city"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ovm8h",
+   "fieldtype": "Tab Break",
+   "label": "Student Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "section_break_nxpg3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fieldname": "column_break_jz3tt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "joining_date",
+   "fieldtype": "Data",
+   "label": "Joining Date"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "personal_details_section",
+   "fieldtype": "Section Break",
+   "label": "Personal Details"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "blood_group",
+   "fieldtype": "Select",
+   "label": "Blood Group",
+   "options": "\nA+\nA-\nB+\nB-\nO+\nO-\nAB+\nAB-"
+  },
+  {
+   "fieldname": "column_break_lw8op",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality"
+  },
+  {
+   "fieldname": "tab_break_tab",
+   "fieldtype": "Tab Break",
+   "label": "Guardians"
+  },
+  {
+   "fieldname": "guardian_details_section",
+   "fieldtype": "Section Break",
+   "label": "Guardian Details"
+  },
+  {
+   "fieldname": "guardians",
+   "fieldtype": "Table",
+   "label": "Guardians",
+   "options": "Student Guardian"
+  },
+  {
+   "fieldname": "exit_tab",
+   "fieldtype": "Tab Break",
+   "label": "Exit"
+  },
+  {
+   "fieldname": "section_break_fzg5d",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date_of_leaving",
+   "fieldtype": "Data",
+   "label": "Date of Leaving"
+  },
+  {
+   "fieldname": "leaving_certificate_number",
+   "fieldtype": "Data",
+   "label": "Leaving Certificate Number"
+  },
+  {
+   "fieldname": "column_break_ymffc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reason_for_leaving",
+   "fieldtype": "Text",
+   "label": "Reason For Leaving"
+  },
+  {
+   "fieldname": "program_courses_tab",
+   "fieldtype": "Tab Break",
+   "label": "Courses and Modules"
+  },
+  {
+   "fieldname": "fees_tab",
+   "fieldtype": "Tab Break",
+   "label": "Fees"
+  },
+  {
+   "fieldname": "fees",
+   "fieldtype": "Table",
+   "label": "Fees",
+   "options": "Student Fees"
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Table",
+   "label": "Course",
+   "options": "Student Courses"
+  },
+  {
+   "fieldname": "modules",
+   "fieldtype": "Table",
+   "label": "Modules",
+   "options": "Course Modules"
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "section_break_wsd8i",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Select",
+   "label": "Region",
+   "options": "\nBanjul\nNorth Bank Region\nLower River Region\nCentral River Region\nWest Coast Region\nUpper River Region"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-22 19:52:49.870455",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Student",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "first_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "first_name"
+}

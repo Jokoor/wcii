@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-12-04 17:20:39.431522",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "guardian",
+  "guardian_name",
+  "relation"
+ ],
+ "fields": [
+  {
+   "fieldname": "guardian",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Guardian",
+   "options": "Guardian"
+  },
+  {
+   "fetch_from": "guardian.guardian_name",
+   "fieldname": "guardian_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Guardian Name"
+  },
+  {
+   "fieldname": "relation",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Relation",
+   "options": "\nMother\nFather\nOthers"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-12-05 03:39:25.406164",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Student Guardian",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,67 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-12-05 21:55:52.868742",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "academic_year",
+  "term_name",
+  "column_break_4x80c",
+  "term_start_date",
+  "term_end_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_4x80c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "term_start_date",
+   "fieldtype": "Date",
+   "label": "Term Start Date"
+  },
+  {
+   "fieldname": "term_end_date",
+   "fieldtype": "Date",
+   "label": "Term End Date"
+  },
+  {
+   "fieldname": "term_name",
+   "fieldtype": "Data",
+   "label": "Term Name"
+  },
+  {
+   "fieldname": "academic_year",
+   "fieldtype": "Link",
+   "label": "Academic Year",
+   "options": "Academic Year"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-10 00:36:36.969154",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Academic Term",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

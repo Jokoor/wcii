@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:id",
+ "creation": "2024-01-06 23:24:04.658761",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "file_name",
+  "file_extension",
+  "id",
+  "mime_type",
+  "modified_time",
+  "file_size",
+  "thumbnail_link",
+  "web_view_link",
+  "category"
+ ],
+ "fields": [
+  {
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "label": "id",
+   "unique": 1
+  },
+  {
+   "fieldname": "file_extension",
+   "fieldtype": "Data",
+   "label": "fileExtension"
+  },
+  {
+   "fieldname": "mime_type",
+   "fieldtype": "Data",
+   "label": "mimeType"
+  },
+  {
+   "fieldname": "modified_time",
+   "fieldtype": "Data",
+   "label": "modifiedTime"
+  },
+  {
+   "fieldname": "file_size",
+   "fieldtype": "Data",
+   "label": "fileSize"
+  },
+  {
+   "fieldname": "thumbnail_link",
+   "fieldtype": "Long Text",
+   "label": "thumbnailLink"
+  },
+  {
+   "fieldname": "web_view_link",
+   "fieldtype": "Data",
+   "label": "webViewLink"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "E-Book Category"
+  },
+  {
+   "fieldname": "file_name",
+   "fieldtype": "Data",
+   "label": "fileName"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-07 03:19:51.519617",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "E-Books",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
