@@ -1,13 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{module_name} | {academic_term} ",
  "creation": "2023-12-05 21:51:19.744618",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "class_name",
   "module",
   "column_break_jwtsa",
   "academic_year",
@@ -16,16 +16,10 @@
   "students",
   "instructors_tab",
   "instructors",
-  "amended_from"
+  "amended_from",
+  "module_name"
  ],
  "fields": [
-  {
-   "fieldname": "class_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Class Name",
-   "reqd": 1
-  },
   {
    "fieldname": "column_break_jwtsa",
    "fieldtype": "Column Break"
@@ -80,14 +74,22 @@
    "label": "Module",
    "options": "Module",
    "reqd": 1
+  },
+  {
+   "fetch_from": "module.module_name",
+   "fieldname": "module_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Module Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-16 12:41:38.405401",
+ "modified": "2024-01-27 17:50:46.454462",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Class",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

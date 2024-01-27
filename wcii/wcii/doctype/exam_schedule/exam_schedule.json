@@ -1,42 +1,46 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:academic_year_name",
- "creation": "2023-12-05 21:54:08.081430",
+ "creation": "2024-01-27 15:54:29.887346",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "academic_year_name",
-  "year_start_date",
-  "year_end_date"
+  "exam",
+  "column_break_kimuc",
+  "course",
+  "academic_term"
  ],
  "fields": [
   {
-   "fieldname": "academic_year_name",
+   "fieldname": "exam",
    "fieldtype": "Data",
-   "label": "Academic Year Name",
-   "unique": 1
+   "label": "Exam"
   },
   {
-   "fieldname": "year_start_date",
-   "fieldtype": "Date",
-   "label": "Year Start Date"
+   "fieldname": "column_break_kimuc",
+   "fieldtype": "Column Break"
   },
   {
-   "fieldname": "year_end_date",
-   "fieldtype": "Date",
-   "label": "Year End Date"
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Course"
+  },
+  {
+   "fieldname": "academic_term",
+   "fieldtype": "Link",
+   "label": "Academic Term",
+   "options": "Academic Term"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-27 17:37:22.297667",
+ "modified": "2024-01-27 17:22:13.927800",
  "modified_by": "Administrator",
  "module": "Wcii",
- "name": "Academic Year",
- "naming_rule": "By fieldname",
+ "name": "Exam Schedule",
  "owner": "Administrator",
  "permissions": [
   {
@@ -54,6 +58,5 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "title_field": "academic_year_name"
+ "states": []
 }

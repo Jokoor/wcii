@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{date} | {class}",
  "creation": "2023-12-05 23:38:51.449043",
  "default_view": "List",
  "doctype": "DocType",
@@ -53,12 +54,12 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2023-12-05 23:39:53.605465",
+ "modified": "2024-01-27 17:56:46.657278",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Attendance",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
