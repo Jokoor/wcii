@@ -16,7 +16,9 @@
   "file_size",
   "thumbnail_link",
   "web_view_link",
-  "category"
+  "category",
+  "file_url",
+  "image"
  ],
  "fields": [
   {
@@ -65,11 +67,21 @@
    "fieldname": "file_name",
    "fieldtype": "Data",
    "label": "fileName"
+  },
+  {
+   "fieldname": "file_url",
+   "fieldtype": "Code",
+   "label": "File Url"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-07 03:19:51.519617",
+ "modified": "2024-02-03 00:08:04.733707",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "E-Books",
