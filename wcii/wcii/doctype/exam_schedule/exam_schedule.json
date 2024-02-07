@@ -1,46 +1,62 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{academic_term} ({exam_type})",
  "creation": "2024-01-27 15:54:29.887346",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "exam",
+  "exam_type",
+  "academic_year",
   "column_break_kimuc",
-  "course",
-  "academic_term"
+  "academic_term",
+  "classes_section",
+  "classes"
  ],
  "fields": [
   {
-   "fieldname": "exam",
-   "fieldtype": "Data",
-   "label": "Exam"
-  },
-  {
    "fieldname": "column_break_kimuc",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "course",
-   "fieldtype": "Link",
-   "label": "Course",
-   "options": "Course"
   },
   {
    "fieldname": "academic_term",
    "fieldtype": "Link",
    "label": "Academic Term",
    "options": "Academic Term"
+  },
+  {
+   "fieldname": "exam_type",
+   "fieldtype": "Select",
+   "label": "Exam Type",
+   "options": "Written\npractical"
+  },
+  {
+   "fieldname": "classes_section",
+   "fieldtype": "Section Break",
+   "label": "Classes"
+  },
+  {
+   "fieldname": "classes",
+   "fieldtype": "Table",
+   "label": "Classes",
+   "options": "Exam Classes"
+  },
+  {
+   "fieldname": "academic_year",
+   "fieldtype": "Link",
+   "label": "Academic Year",
+   "options": "Academic Year"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-27 17:22:13.927800",
+ "modified": "2024-02-07 02:59:50.351644",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Exam Schedule",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

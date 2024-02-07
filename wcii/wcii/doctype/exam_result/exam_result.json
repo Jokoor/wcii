@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-07 03:05:21.332025",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "exam",
+  "column_break_v9sdr",
+  "class_name",
+  "module",
+  "section_break_zinge",
+  "students"
+ ],
+ "fields": [
+  {
+   "fieldname": "exam",
+   "fieldtype": "Link",
+   "label": "Exam",
+   "options": "Exam Schedule"
+  },
+  {
+   "fieldname": "column_break_v9sdr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zinge",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "class_name",
+   "fieldtype": "Link",
+   "label": "Class",
+   "options": "Class"
+  },
+  {
+   "fieldname": "students",
+   "fieldtype": "Table",
+   "label": "Students",
+   "options": "Exam Result Students"
+  },
+  {
+   "fetch_from": "class_name.module",
+   "fieldname": "module",
+   "fieldtype": "Data",
+   "label": "Module",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-07 06:14:52.532962",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Exam Result",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -9,6 +9,7 @@ class Student(Document):
         # self.full_name = f'{self.first_name} {self.last_name or ""}'
         pass
     def after_insert(self):
+         self.create_student_report()
          students = frappe.db.count("Student")
          overview = frappe.get_doc("Overview")
          overview.total_students = students
@@ -28,3 +29,13 @@ class Student(Document):
                 "module_name": module.module_name
             })
 
+    #create student report doctype
+    def create_student_report(self):
+        #create student report doctype
+        student_report = frappe.get_doc({
+            'doctype': 'Student Report',
+            'student': self.name,
+            'student_name': self.first_name
+        })
+        student_report.insert()
+        ignore_permissions = True
