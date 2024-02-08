@@ -5,6 +5,9 @@ import frappe
 from frappe.model.document import Document
 
 class StudentReport(Document):
+	#set the autoname
+	def autoname(self):
+		self.name = f'{self.student}'
 	# def on_update(self):
 		
 	# 	self.calculate_total_marks()
@@ -22,7 +25,7 @@ class StudentReport(Document):
 			for grade in grades:
 				if int(result.total_marks) >= int(grade.min_percentage) and int(result.total_marks) <= int(grade.max_percentage):
 					result.grade = grade.grade_name
-					result
+					result.remark = grade.remark
 					break
 
 			

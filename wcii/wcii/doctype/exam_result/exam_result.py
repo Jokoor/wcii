@@ -45,7 +45,7 @@ class ExamResult(Document):
 						'module_name': frappe.db.get_value('Class', self.class_name, 'module_name'),
 						'academic_year': class_name.academic_year,
 						'academic_term': class_name.academic_term,
-						'exam': student.mark,
+						'exam': student.mark
 						
 						
 					})

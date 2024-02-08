@@ -40,12 +40,13 @@
    "fieldname": "results",
    "fieldtype": "Table",
    "label": "Results",
-   "options": "Student Report Modules"
+   "options": "Student Report Modules",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-07 07:44:23.282704",
+ "modified": "2024-02-08 01:08:53.584156",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Student Report",
