@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:AA{###}",
  "creation": "2023-12-04 17:09:56.928038",
  "default_view": "List",
  "doctype": "DocType",
@@ -242,12 +241,6 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
-<<<<<<< HEAD
- "modified": "2024-01-28 13:11:52.336190",
-=======
- "modified": "2024-02-07 06:27:10.695417",
->>>>>>> 0e4cb5f3465df796b7759ca9444f9d617a574f1d
- "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Student",
  "naming_rule": "Expression",

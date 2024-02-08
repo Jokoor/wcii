@@ -10,11 +10,12 @@ class EBooks(Document):
 	def validate(self):
 		self.get_book_thumbnail()	
 #download the file using urrlib
-	def get_book_thumbnail(self):
+	def get_book_thumbnail(self, ignore_permissions=True):
 			url = self.thumbnail_link
-			urllib.request.urlretrieve(url, f'/home/khan/frappe-bench/sites/wcii/public/files/{self.name}.png')
+			urllib.request.urlretrieve(url, f'/home/khan/frappe-bench/sites/app.wcii.royalsmb.com/public/files/{self.name}.png')
 			self.thumbnail_link = f'/files/{self.name}.png'
 			self.image = f'/files/{self.name}.png'
+			self.ignore_permissions=True
 
 			# image = convert_from_path(f'/home/khan/frappe-bench/sites/wcii/public/files/{self.name}.pdf')
 			# image[0].save(f'/home/khan/frappe-bench/sites/wcii/public/files/{self.name}.png', 'PNG')
