@@ -44,7 +44,8 @@
   "leaving_certificate_number",
   "column_break_ymffc",
   "reason_for_leaving",
-  "city"
+  "city",
+  "fullname"
  ],
  "fields": [
   {
@@ -232,11 +233,20 @@
    "fieldname": "city",
    "fieldtype": "Data",
    "label": "City"
+  },
+  {
+   "fieldname": "fullname",
+   "fieldtype": "Data",
+   "label": "fullname"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
+<<<<<<< HEAD
+ "modified": "2024-01-28 13:11:52.336190",
+=======
  "modified": "2024-02-07 06:27:10.695417",
+>>>>>>> 0e4cb5f3465df796b7759ca9444f9d617a574f1d
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Student",
