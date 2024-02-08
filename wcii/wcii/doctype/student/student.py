@@ -6,8 +6,9 @@ from frappe.model.document import Document
 
 class Student(Document):
     def before_save(self):
-        # self.full_name = f'{self.first_name} {self.last_name or ""}'
-        pass
+        fullname = f'{self.first_name or ""} {self.middle_name or ""} {self.last_name or ""}'
+        self.fullname=' '.join([i for i in fullname.split(' ') if i])
+        
     def after_insert(self):
          students = frappe.db.count("Student")
          overview = frappe.get_doc("Overview")
