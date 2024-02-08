@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-07 05:41:49.895782",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "module",
+  "module_name",
+  "academic_year",
+  "academic_term",
+  "assessment",
+  "exam",
+  "total_marks",
+  "grade",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "module",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Module "
+  },
+  {
+   "fieldname": "module_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Module Name"
+  },
+  {
+   "fieldname": "academic_term",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Academic Term"
+  },
+  {
+   "default": "0",
+   "fieldname": "assessment",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Assessment"
+  },
+  {
+   "default": "0",
+   "fieldname": "exam",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Exam"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_marks",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Marks"
+  },
+  {
+   "default": "C",
+   "fieldname": "grade",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Grade"
+  },
+  {
+   "default": "Good",
+   "fieldname": "remark",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Remark"
+  },
+  {
+   "fieldname": "academic_year",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Acdemic Year"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-02-07 07:27:04.427942",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Student Report Modules",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
