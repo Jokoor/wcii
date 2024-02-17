@@ -13,6 +13,7 @@ class Student(Document):
         self.fullname = " ".join([i for i in fullname.split(" ") if i])
 
     def after_insert(self):
+        self.create_user()
         self.create_student_report()
         students = frappe.db.count("Student")
         overview = frappe.get_doc("Overview")
@@ -47,7 +48,7 @@ class Student(Document):
         ignore_permissions = True
 
     #create user for the student
-    def createe_user(self):
+    def create_user(self):
         if not frappe.db.exist("User", self.email):
             student = frappe.get_doc({
                 'doctype': 'User',
