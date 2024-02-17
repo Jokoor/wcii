@@ -45,3 +45,19 @@ class Student(Document):
         )
         student_report.insert()
         ignore_permissions = True
+
+    #create user for the student
+    def createe_user(self):
+        if not frappe.db.exist("User", self.email):
+            student = frappe.get_doc({
+                'doctype': 'User',
+                'first_name': self.first_name,
+                'last_name': self.last_name,
+                'gender': self.gender,
+                'email':self.email,
+                'send_welcome_email': 0,
+                'user_type': 'Website User'
+
+            })
+            student.add_roles('Student')
+            student.save(ignore_permissions=True)
