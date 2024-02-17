@@ -62,3 +62,8 @@ class Student(Document):
             })
             student.add_roles('Student')
             student.save(ignore_permissions=True)
+    
+    #delete user after student is delted
+    def after_delete(self):
+        frappe.delete_doc("User", self.email_address)
+
