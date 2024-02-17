@@ -14,6 +14,7 @@ class Student(Document):
 
     def after_insert(self):
         self.create_user()
+        self.send_email()
         self.create_student_report()
         students = frappe.db.count("Student")
         overview = frappe.get_doc("Overview")
@@ -66,4 +67,10 @@ class Student(Document):
     #delete user after student is delted
     def after_delete(self):
         frappe.delete_doc("User", self.email_address)
+    
+    def send_email(email_address):
+        frappe.sendmail(recipients=self.email_address,
+                    subject="Welcome To Wcii",
+                    message= "You have successfully been registered to wcii"
+    )
 
