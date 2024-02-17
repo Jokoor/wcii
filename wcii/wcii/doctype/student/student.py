@@ -55,7 +55,7 @@ class Student(Document):
                 'first_name': self.first_name,
                 'last_name': self.last_name,
                 'gender': self.gender,
-                'email':self.email,
+                'email':self.email_address,
                 'send_welcome_email': 0,
                 'user_type': 'Website User'
 
