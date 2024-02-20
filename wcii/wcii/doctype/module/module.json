@@ -14,7 +14,9 @@
   "abbreviation",
   "assessement_tab",
   "section_break_qnrfq",
-  "grading_scale"
+  "grading_scale",
+  "resources_tab",
+  "resources"
  ],
  "fields": [
   {
@@ -49,11 +51,22 @@
    "fieldname": "abbreviation",
    "fieldtype": "Data",
    "label": "Abbreviation"
+  },
+  {
+   "fieldname": "resources_tab",
+   "fieldtype": "Tab Break",
+   "label": "Resources"
+  },
+  {
+   "fieldname": "resources",
+   "fieldtype": "Table",
+   "label": "Resources",
+   "options": "Resources"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-13 00:46:50.834711",
+ "modified": "2024-02-08 16:19:39.866888",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Module",

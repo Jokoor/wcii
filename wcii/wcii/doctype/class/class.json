@@ -17,7 +17,9 @@
   "instructors_tab",
   "instructors",
   "amended_from",
-  "module_name"
+  "module_name",
+  "class_resources_tab",
+  "resources"
  ],
  "fields": [
   {
@@ -81,11 +83,22 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Module Name"
+  },
+  {
+   "fieldname": "class_resources_tab",
+   "fieldtype": "Tab Break",
+   "label": "Class Resources"
+  },
+  {
+   "fieldname": "resources",
+   "fieldtype": "Table",
+   "label": "Resources",
+   "options": "Resources"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-27 17:50:46.454462",
+ "modified": "2024-02-08 16:44:20.859046",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Class",

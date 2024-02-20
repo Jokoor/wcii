@@ -49,7 +49,7 @@
   },
   {
    "fieldname": "thumbnail_link",
-   "fieldtype": "Attach Image",
+   "fieldtype": "Text",
    "label": "thumbnailLink"
   },
   {
@@ -81,7 +81,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-04 13:32:58.426509",
+ "modified": "2024-02-12 02:45:25.376734",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "E-Books",
