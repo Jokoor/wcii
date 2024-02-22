@@ -68,7 +68,7 @@ class Student(Document):
     def after_delete(self):
         frappe.delete_doc("User", self.email_address)
     
-    def send_email(email_address):
+    def send_email(self):
         frappe.sendmail(recipients=self.email_address,
                     subject="Welcome To Wcii",
                     message= "You have successfully been registered to wcii"
