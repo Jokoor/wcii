@@ -30,7 +30,7 @@
    "fieldname": "exam_type",
    "fieldtype": "Select",
    "label": "Exam Type",
-   "options": "Written\npractical"
+   "options": "WRITTEN\nPRACTICAL"
   },
   {
    "fieldname": "classes_section",
