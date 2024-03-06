@@ -20,7 +20,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-22 21:38:22.046761",
+ "modified": "2024-03-06 13:10:02.230819",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "E-Book Category",
@@ -57,6 +57,18 @@
    "report": 1,
    "role": "Teacher",
    "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "School Admin",
+   "share": 1,
+   "write": 1
   }
  ],
  "sort_field": "modified",
