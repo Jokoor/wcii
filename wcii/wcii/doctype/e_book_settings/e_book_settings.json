@@ -1,0 +1,114 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-03-06 02:50:53.639379",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "last_fetch_time",
+  "service_account_settings",
+  "type",
+  "project_id",
+  "private_key_id",
+  "private_key",
+  "client_email",
+  "client_id",
+  "auth_url",
+  "token_url",
+  "auth_provider_x509_cert_url",
+  "client_x509_cert_url",
+  "universe_domain"
+ ],
+ "fields": [
+  {
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Type"
+  },
+  {
+   "fieldname": "project_id",
+   "fieldtype": "Data",
+   "label": "Project Id"
+  },
+  {
+   "fieldname": "private_key_id",
+   "fieldtype": "Data",
+   "label": "Private Key Id"
+  },
+  {
+   "fieldname": "private_key",
+   "fieldtype": "Data",
+   "label": "Private Key"
+  },
+  {
+   "fieldname": "client_email",
+   "fieldtype": "Data",
+   "label": "Client Email"
+  },
+  {
+   "fieldname": "client_id",
+   "fieldtype": "Data",
+   "label": "Client Id"
+  },
+  {
+   "fieldname": "auth_url",
+   "fieldtype": "Data",
+   "label": "Auth URL"
+  },
+  {
+   "fieldname": "token_url",
+   "fieldtype": "Data",
+   "label": "Token URL"
+  },
+  {
+   "fieldname": "auth_provider_x509_cert_url",
+   "fieldtype": "Data",
+   "label": "Auth Provider"
+  },
+  {
+   "fieldname": "client_x509_cert_url",
+   "fieldtype": "Data",
+   "label": "Client URL"
+  },
+  {
+   "fieldname": "universe_domain",
+   "fieldtype": "Data",
+   "label": "Universe Domain"
+  },
+  {
+   "fieldname": "service_account_settings",
+   "fieldtype": "Section Break",
+   "label": "Service Account Settings"
+  },
+  {
+   "fieldname": "last_fetch_time",
+   "fieldtype": "Data",
+   "label": "Last Fetch Time"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-03-06 02:52:14.565682",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "E-book Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,21 @@
+{%  extends "templates/web.html" %}
+
+{% block page_content %}
+
+<div class="py-20 row">
+<div class="col-sm-2">
+<img alt="{{ title }}" src="{{ image }}"/>
+</div>
+<div class="col">
+<h1>{{ title }}</h1>
+<p class="lead">By {{ id }}</p>
+
+<div class="mt-4">
+<div>Publisher: <strong>{{ file_name }}</strong></div>
+<div>ISBN: <strong>{{ id }}</strong></div>
+</div>
+<p>{{ file_url }}</p>
+</div>
+</div>
+
+{% endblock %}

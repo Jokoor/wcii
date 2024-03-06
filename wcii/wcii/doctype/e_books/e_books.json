@@ -1,9 +1,10 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "field:id",
  "creation": "2024-01-06 23:24:04.658761",
- "default_view": "List",
+ "default_view": "Image",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -18,7 +19,9 @@
   "web_view_link",
   "category",
   "file_url",
-  "image"
+  "image",
+  "published",
+  "route"
  ],
  "fields": [
   {
@@ -77,11 +80,24 @@
    "fieldname": "image",
    "fieldtype": "Attach Image",
    "label": "Image"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
   }
  ],
- "index_web_pages_for_search": 1,
+ "has_web_view": 1,
+ "image_field": "image",
+ "is_published_field": "published",
  "links": [],
- "modified": "2024-02-12 02:45:25.376734",
+ "modified": "2024-03-06 07:01:44.875650",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "E-Books",
@@ -99,8 +115,22 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "select": 1,
+   "share": 1,
+   "write": 1
   }
  ],
+ "route": "ebooks",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
