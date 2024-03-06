@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:MD-{###}",
+ "autoname": "format:{abbreviation}",
  "creation": "2023-12-05 03:51:01.120539",
  "default_view": "List",
  "doctype": "DocType",
@@ -50,7 +50,9 @@
   {
    "fieldname": "abbreviation",
    "fieldtype": "Data",
-   "label": "Abbreviation"
+   "in_list_view": 1,
+   "label": "Abbreviation",
+   "reqd": 1
   },
   {
    "fieldname": "resources_tab",
@@ -66,7 +68,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-08 16:19:39.866888",
+ "modified": "2024-03-06 15:55:04.274771",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Module",

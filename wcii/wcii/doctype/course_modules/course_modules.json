@@ -7,8 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "module",
-  "module_name",
-  "status"
+  "module_name"
  ],
  "fields": [
   {
@@ -19,25 +18,17 @@
    "options": "Module"
   },
   {
-   "fetch_from": "course.course_name",
+   "fetch_from": "module.module_name",
    "fieldname": "module_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Module Name"
-  },
-  {
-   "default": "Incomplete",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Status",
-   "options": "Complete\nIncomplete"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-13 00:26:37.415017",
+ "modified": "2024-03-06 15:53:44.117935",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Course Modules",

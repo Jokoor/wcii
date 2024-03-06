@@ -37,8 +37,8 @@ def service_account():
         "private_key": frappe.db.get_single_value("E-Book Settings", "private_key"),
         "client_email": frappe.db.get_single_value("E-Book Settings", "client_email"),
         "client_id": frappe.db.get_single_value("E-Book Settings", "client_id"),
-        "auth_uri": frappe.db.get_single_value("E-Book Settings", "auth_uri"),
-        "token_uri": frappe.db.get_single_value("E-Book Settings", "token_uri"),
+        "auth_uri": frappe.db.get_single_value("E-Book Settings", "auth_url"),
+        "token_uri": frappe.db.get_single_value("E-Book Settings", "token_url"),
         "auth_provider_x509_cert_url": frappe.db.get_single_value("E-Book Settings", "auth_provider_x509_cert_url"),
         "client_x509_cert_url": frappe.db.get_single_value("E-Book Settings", "client_x509_cert_url"),
         "universe_domain": frappe.db.get_single_value("E-Book Settings", "universe_domain")
