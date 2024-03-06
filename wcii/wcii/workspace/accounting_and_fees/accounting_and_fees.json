@@ -1,0 +1,63 @@
+{
+ "charts": [
+  {
+   "chart_name": "Fees",
+   "label": "Fees"
+  }
+ ],
+ "content": "[{\"id\":\"uNbzWy2UEV\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Accounting and Fees</span>\",\"col\":12}},{\"id\":\"ty9J9O5ucR\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Fees\",\"col\":12}},{\"id\":\"o2Lx_hRwel\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Fees (This Year)\",\"col\":4}},{\"id\":\"AZpvCGuqTu\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Paid Fees (This Year)\",\"col\":4}},{\"id\":\"nxZkm3--hJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Unpaid Fees (This Year)\",\"col\":4}},{\"id\":\"FS7wllPn93\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fees\",\"col\":3}},{\"id\":\"3knNWk4mCd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payments\",\"col\":3}}]",
+ "creation": "2024-03-05 16:17:27.174873",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "expenses",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Accounting and Fees",
+ "links": [],
+ "modified": "2024-03-06 02:30:40.353423",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Accounting and Fees",
+ "number_cards": [
+  {
+   "label": "Total Fees (This Year)",
+   "number_card_name": "Total Fees (This Year)"
+  },
+  {
+   "label": "Total Paid Fees (This Year)",
+   "number_card_name": "Total Paid Fees (This Year)"
+  },
+  {
+   "label": "Total Unpaid Fees (This Year)",
+   "number_card_name": "Total Unpaid Fees (This Year)"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 3.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Fees",
+   "link_to": "Fees",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Payments",
+   "link_to": "Payments",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Accounting and Fees"
+}

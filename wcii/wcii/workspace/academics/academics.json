@@ -1,0 +1,75 @@
+{
+ "charts": [
+  {
+   "chart_name": "Enrollements",
+   "label": "Enrollements"
+  }
+ ],
+ "content": "[{\"id\":\"dhrHpW5ytz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Academics</span>\",\"col\":12}},{\"id\":\"dc3kFY-lL3\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Enrollements\",\"col\":12}},{\"id\":\"ME-unoJCGW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Courses\",\"col\":4}},{\"id\":\"0przdmYO3g\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Modules\",\"col\":4}},{\"id\":\"fplUoEdX8Q\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"5H-aBDVGLt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Courses\",\"col\":3}},{\"id\":\"a7LHUAoKld\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Modules\",\"col\":3}},{\"id\":\"K20FZ_62SU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Academic Year\",\"col\":3}},{\"id\":\"uqe_JK1Ak3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Academic Term\",\"col\":3}}]",
+ "creation": "2024-03-05 15:53:37.442107",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "file-large",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Academics",
+ "links": [],
+ "modified": "2024-03-06 02:29:43.133680",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Academics",
+ "number_cards": [
+  {
+   "label": "Total Courses",
+   "number_card_name": "Total Courses"
+  },
+  {
+   "label": "Total Modules",
+   "number_card_name": "Total Modules"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Courses",
+   "link_to": "Course",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Modules",
+   "link_to": "Module",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Academic Year",
+   "link_to": "Academic Year",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Academic Term",
+   "link_to": "Academic Term",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Academics"
+}

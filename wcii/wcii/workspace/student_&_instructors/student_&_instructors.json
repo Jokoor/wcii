@@ -1,0 +1,115 @@
+{
+ "charts": [
+  {
+   "chart_name": "Admission Rate",
+   "label": "Admission Rate"
+  }
+ ],
+ "content": "[{\"id\":\"J3RQ_zncm3\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Student &amp; Admissions</span>\",\"col\":12}},{\"id\":\"9toHsdrUBy\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Admission Rate\",\"col\":12}},{\"id\":\"N9UGfMhAmY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Students\",\"col\":4}},{\"id\":\"ZgSrVOAhvD\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Instructors\",\"col\":4}},{\"id\":\"MX99VT7y57\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Enrollments (This Year)\",\"col\":4}},{\"id\":\"FSIB5MQXsW\",\"type\":\"card\",\"data\":{\"card_name\":\"Student Master\",\"col\":5}},{\"id\":\"nn067EDTyg\",\"type\":\"card\",\"data\":{\"card_name\":\"Instructor Master\",\"col\":4}}]",
+ "creation": "2024-03-05 16:03:16.245271",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "share-people",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Student & Instructors",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Student Master",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Students",
+   "link_count": 0,
+   "link_to": "Student",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Student Attendance",
+   "link_count": 0,
+   "link_to": "Attendance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Student Fees",
+   "link_count": 0,
+   "link_to": "Fees",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Class Enrollment",
+   "link_count": 0,
+   "link_to": "Enrollment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Instructor Master",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Instructor",
+   "link_count": 0,
+   "link_to": "Instructor",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-03-06 02:30:31.739987",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Student & Instructors",
+ "number_cards": [
+  {
+   "label": "Total Students",
+   "number_card_name": "Total Students"
+  },
+  {
+   "label": "Total Instructors",
+   "number_card_name": "Total Instructors"
+  },
+  {
+   "label": "Enrollments (This Year)",
+   "number_card_name": "Enrollments (This Year)"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [],
+ "title": "Student & Instructors"
+}

@@ -1,0 +1,70 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"1OqRQSi1Ez\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Exam and Assessments</span>\",\"col\":12}},{\"id\":\"ZBOMlaLQI0\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Schedule Exams\",\"col\":4}},{\"id\":\"C0_3Zer7ST\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Submitted Exams\",\"col\":4}},{\"id\":\"3QBOMolUfA\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"5Ces06MJ2c\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Exam Schedule\",\"col\":3}},{\"id\":\"Astfx02anQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Exam Result\",\"col\":3}},{\"id\":\"hrEsYaiOSs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Assignments\",\"col\":3}},{\"id\":\"vgvHx-qBg1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Assignment Rule\",\"col\":3}}]",
+ "creation": "2024-03-05 16:36:17.069887",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "edit-fill",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Exam and Assessments",
+ "links": [],
+ "modified": "2024-03-06 02:30:48.343627",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "Exam and Assessments",
+ "number_cards": [
+  {
+   "label": "Schedule Exams",
+   "number_card_name": "Schedule Exams"
+  },
+  {
+   "label": "Submitted Exams",
+   "number_card_name": "Submitted Exams"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 4.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Exam Schedule",
+   "link_to": "Exam Schedule",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Exam Result",
+   "link_to": "Exam Result",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Assignments",
+   "link_to": "Assignment",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Assignment Rule",
+   "link_to": "Assignment Rule",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Exam and Assessments"
+}
