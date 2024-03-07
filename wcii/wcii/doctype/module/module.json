@@ -66,9 +66,10 @@
    "options": "Resources"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-06 15:55:04.274771",
+ "modified": "2024-03-06 20:44:21.380372",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Module",
