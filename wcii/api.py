@@ -1,170 +1,237 @@
+# Copyright (c) 2019, Frappe Technologies and contributors
+# License: MIT. See LICENSE
+
+import os
+from urllib.parse import quote
+
+from apiclient.http import MediaFileUpload
+from googleapiclient.errors import HttpError
+
 import frappe
+from frappe import _
+from frappe.integrations.google_oauth import GoogleOAuth
+from frappe.integrations.offsite_backup_utils import (
+	get_latest_backup_file,
+	send_email,
+	validate_file_size,
+)
 from frappe.model.document import Document
-from frappe.utils import now
-#import build
-from googleapiclient.discovery import build
-from google.oauth2 import service_account
+from frappe.utils import get_backups_path, get_bench_path
+from frappe.utils.background_jobs import enqueue
+from frappe.utils.backups import new_backup
 
 
+@frappe.whitelist(methods=["POST"])
+def authorize_access(reauthorize=False, code=None):
+	"""
+	If no Authorization code get it from Google and then request for Refresh Token.
+	Google Contact Name is set to flags to set_value after Authorization Code is obtained.
+	"""
 
-# def overview():
-#     total_students = frappe.db.count("Student")
-#     total_courses = frappe.db.count("Course")
-#     total_modules = frappe.db.count("Module")
+	oauth_code = (
+		frappe.db.get_single_value("Google Drive", "authorization_code") if not code else code
+	)
+	oauth_obj = GoogleOAuth("drive")
 
-#     doc = frappe.get_doc("Overview")
+	if not oauth_code or reauthorize:
+		if reauthorize:
+			frappe.db.set_single_value("Google Drive", "backup_folder_id", "")
+		return oauth_obj.get_authentication_url(
+			{
+				"redirect": f"/app/Form/{quote('Google Drive')}",
+			},
+		)
 
-#     doc.db.set_value("total_students", total_students)
-#     doc.db.set_value("total_courses", total_courses)
-#     doc.db.set_value("total_modules", total_modules)
-@frappe.whitelist()
-def get_class_students(class_name=""):
-    if not class_name or not frappe.db.exists('Class', class_name, cache=True): return []
-    
-    try:
-        classdoc=frappe.get_doc('Class', class_name)
-        
-        return [s for s in classdoc.students]
-    except: 
-        return []
+	r = oauth_obj.authorize(oauth_code)
+	frappe.db.set_single_value(
+		"Google Drive",
+		{"authorization_code": oauth_code, "refresh_token": r.get("refresh_token")},
+	)
 
-@frappe.whitelist()
-def service_account():
-    service_account_info = {
-        "type": frappe.db.get_single_value("E-Book Settings", "type"),
-        "project_id": frappe.db.get_single_value("E-Book Settings", "project_id"),
-        "private_key_id": frappe.db.get_single_value("E-Book Settings", "private_key_id"),
-        "private_key": frappe.db.get_single_value("E-Book Settings", "private_key"),
-        "client_email": frappe.db.get_single_value("E-Book Settings", "client_email"),
-        "client_id": frappe.db.get_single_value("E-Book Settings", "client_id"),
-        "auth_uri": frappe.db.get_single_value("E-Book Settings", "auth_url"),
-        "token_uri": frappe.db.get_single_value("E-Book Settings", "token_url"),
-        "auth_provider_x509_cert_url": frappe.db.get_single_value("E-Book Settings", "auth_provider_x509_cert_url"),
-        "client_x509_cert_url": frappe.db.get_single_value("E-Book Settings", "client_x509_cert_url"),
-        "universe_domain": frappe.db.get_single_value("E-Book Settings", "universe_domain")
-    }
-    return service_account_info
 
-credentials = service_account()
-drive_service = build('drive', 'v3', credentials=credentials)
+def get_google_drive_object():
+	"""
+	Returns an object of Google Drive.
+	"""
+	account = frappe.get_doc("Google Drive")
+	oauth_obj = GoogleOAuth("drive")
 
-@frappe.whitelist()
-def last_fetch():
-    return frappe.db.get_single_value("E-Book Settings", "last_fetch_time")
+	google_drive = oauth_obj.get_google_service_object(
+		account.get_access_token(),
+		account.get_password(fieldname="indexing_refresh_token", raise_exception=False),
+	)
 
-@frappe.whitelist()
-def set_last_fetch():
-    frappe.db.set_value("E-Book Settings", None, "last_fetch_time", now())
-    frappe.db.commit()
+	return google_drive, account
 
-@frappe.whitelist()
-def get_files(next_page_token=None, modified_time='2012-06-04T12:00:00'):
-    try:
-        last_fetch_time = frappe.db.get_single_value("E-Book Settings", "last_fetch_time")
-        if last_fetch_time:
-            modified_time = last_fetch_time
-    except:
-        pass
 
-    diff = now() - now_datetime(modified_time)
-    if diff.seconds < 1800:
-        return []
+def check_for_folder_in_google_drive():
+	"""Checks if folder exists in Google Drive else create it."""
 
-    try:
-        service = build('drive', 'v3', credentials=get_credentials())
+	def _create_folder_in_google_drive(google_drive, account):
+		file_metadata = {
+			"name": account.backup_folder_name,
+			"mimeType": "application/vnd.google-apps.folder",
+		}
 
-        results = service.files().list(
-            pageSize=1000,
-            pageToken=next_page_token,
-            q=f"modifiedTime > '{modified_time}' and (mimeType='application/pdf' or mimeType='application/vnd.google-apps.folder')",
-            fields="nextPageToken, files(id, name, mimeType, modifiedTime, parents)"
-        ).execute()
+		try:
+			folder = google_drive.files().create(body=file_metadata, fields="id").execute()
+			frappe.db.set_single_value("Google Drive", "backup_folder_id", folder.get("id"))
+			frappe.db.commit()
+		except HttpError as e:
+			frappe.throw(
+				_("Google Drive - Could not create folder in Google Drive - Error Code {0}").format(e)
+			)
 
-        files = results.get('files', [])
-        next_page_token = results.get('nextPageToken')
+	google_drive, account = get_google_drive_object()
 
-        if next_page_token:
-            files.extend(get_files(next_page_token=next_page_token, modified_time=modified_time))
+	if account.backup_folder_id:
+		return
 
-        frappe.db.set_value("E-Book Settings", "E-Book Settings", "last_fetch_time", now())
-        frappe.db.commit()
+	backup_folder_exists = False
 
-        return files
-    except Exception as e:
-        frappe.msgprint(f"Error: {e}")
-        return []
+	try:
+		google_drive_folders = (
+			google_drive.files().list(q="mimeType='application/vnd.google-apps.folder'").execute()
+		)
+	except HttpError as e:
+		frappe.throw(
+			_("Google Drive - Could not find folder in Google Drive - Error Code {0}").format(e)
+		)
 
-def get_credentials():
-    service_account_info = {
-        "type": frappe.db.get_single_value("E-Book Settings", "type"),
-        "project_id": frappe.db.get_single_value("E-Book Settings", "project_id"),
-        "private_key_id": frappe.db.get_single_value("E-Book Settings", "private_key_id"),
-        "private_key": frappe.db.get_single_value("E-Book Settings", "private_key"),
-        "client_email": frappe.db.get_single_value("E-Book Settings", "client_email"),
-        "client_id": frappe.db.get_single_value("E-Book Settings", "client_id"),
-        "auth_uri": frappe.db.get_single_value("E-Book Settings", "auth_url"),
-        "token_uri": frappe.db.get_single_value("E-Book Settings", "token_url"),
-        "auth_provider_x509_cert_url": frappe.db.get_single_value("E-Book Settings", "auth_provider_x509_cert_url"),
-        "client_x509_cert_url": frappe.db.get_single_value("E-Book Settings", "client_x509_cert_url"),
-        "universe_domain": frappe.db.get_single_value("E-Book Settings", "universe_domain")
-    }
+	for f in google_drive_folders.get("files"):
+		if f.get("name") == account.backup_folder_name:
+			frappe.db.set_single_value("Google Drive", "backup_folder_id", f.get("id"))
+			frappe.db.commit()
+			backup_folder_exists = True
+			break
 
-    from google.oauth2 import service_account
+	if not backup_folder_exists:
+		_create_folder_in_google_drive(google_drive, account)
 
-    credentials = service_account.Credentials.from_service_account_info(service_account_info)
-
-    return credentials
-
-    try:
-        last_fetch_time = frappe.db.get_single_value("E-Book Settings", "last_fetch_time")
-        if last_fetch_time:
-            modified_time = last_fetch_time
-    except:
-        pass
-
-    diff = now() - now_datetime(modified_time)
-    if diff.seconds < 3600:
-        return []
-
-    try:
-        res = frappe.get_all("E-Book", filters={"modified": [">", modified_time]}, fields=["name", "modified"],
-                                limit=1000, start=next_page_token)
-        files = res if res else[]
-        if files and res.next_page_token:
-            files.extend(get_files(next_page_token=res.next_page_token, modified_time=modified_time))
-        frappe.db.set_value("E-Book Settings", None, "last_fetch_time", now())
-        frappe.db.commit()
-        return files
-    except Exception as e:
-        frappe.msgprint(f"Error: {e}")
-        return []
 
 @frappe.whitelist()
-def prepare_folder(folder, all_folders):
-    tags = []
-    for f in folder.parents:
-        parent = next((x for x in all_folders if x.id == f), None)
-        if parent:
-            x = prepare_folder(parent, all_folders)
-            tags.extend(x['tags'])
-        else:
-            tags = tags[:-1]
+def take_backup():
+	"""Enqueue longjob for taking backup to Google Drive"""
+	enqueue(
+		"frappe.integrations.doctype.google_drive.google_drive.upload_system_backup_to_google_drive",
+		queue="long",
+		timeout=1500,
+	)
+	frappe.msgprint(_("Queued for backup. It may take a few minutes to an hour."))
 
-    return {
-        'name': folder.name,
-        'id': folder.id,
-        'tags': list(set(tags + [folder.name.lower()] if folder.name else []))
-    }
 
-def prepare_drive_files(modified_time=None):
-    global is_in_progress
-    if is_in_progress:
-        return
-    is_in_progress = True
-    category_set = set()
-    files = get_files(modified_time=modified_time)
-    
-    for f in files:
-        if f.get('mimeType') == 'application/pdf':
-            folder = next((f2 for f2 in files if f2.get('id') == f.get('parents')[0]), None)
-            category = (folder.get('name').upper().replace('-', ' ') if folder else 'Uncategorized').strip()
+def upload_system_backup_to_google_drive():
+	"""
+	Upload system backup to Google Drive
+	"""
+	# Get Google Drive Object
+	google_drive, account = get_google_drive_object()
+
+	# Check if folder exists in Google Drive
+	check_for_folder_in_google_drive()
+	account.load_from_db()
+
+	validate_file_size()
+
+	if frappe.flags.create_new_backup:
+		set_progress(1, "Backing up Data.")
+		backup = new_backup()
+		file_urls = []
+		file_urls.append(backup.backup_path_db)
+		file_urls.append(backup.backup_path_conf)
+
+		if account.file_backup:
+			file_urls.append(backup.backup_path_files)
+			file_urls.append(backup.backup_path_private_files)
+	else:
+		file_urls = get_latest_backup_file(with_files=account.file_backup)
+
+	for fileurl in file_urls:
+		if not fileurl:
+			continue
+
+		file_metadata = {"name": os.path.basename(fileurl), "parents": [account.backup_folder_id]}
+
+		try:
+			media = MediaFileUpload(
+				get_absolute_path(filename=fileurl), mimetype="application/gzip", resumable=True
+			)
+		except OSError as e:
+			frappe.throw(_("Google Drive - Could not locate - {0}").format(e))
+
+		try:
+			set_progress(2, "Uploading backup to Google Drive.")
+			google_drive.files().create(body=file_metadata, media_body=media, fields="id").execute()
+		except HttpError as e:
+			send_email(False, "Google Drive", "Google Drive", "email", error_status=e)
+
+	set_progress(3, "Uploading successful.")
+	frappe.db.set_single_value("Google Drive", "last_backup_on", frappe.utils.now_datetime())
+	send_email(True, "Google Drive", "Google Drive", "email")
+	return _("Google Drive Backup Successful.")
+
+
+def daily_backup():
+	drive_settings = frappe.db.get_singles_dict("Google Drive", cast=True)
+	if drive_settings.enable and drive_settings.frequency == "Daily":
+		upload_system_backup_to_google_drive()
+
+
+def weekly_backup():
+	drive_settings = frappe.db.get_singles_dict("Google Drive", cast=True)
+	if drive_settings.enable and drive_settings.frequency == "Weekly":
+		upload_system_backup_to_google_drive()
+
+
+def get_absolute_path(filename):
+	file_path = os.path.join(get_backups_path()[2:], os.path.basename(filename))
+	return f"{get_bench_path()}/sites/{file_path}"
+
+
+def set_progress(progress, message):
+	frappe.publish_realtime(
+		"upload_to_google_drive",
+		dict(progress=progress, total=3, message=message),
+		user=frappe.session.user,
+	)
+
+#get folder
+@frappe.whitelist()
+def get_folder(google_drive, folder_id):
+    folder = google_drive.files().get(fileId=folder_id, fields='name').execute()
+    return folder
+
+#geta all the pdf 
+@frappe.whitelist()
+def get_pdf():
+    google_drive, account = get_google_drive_object()
+    next_page_token = None
+    while True:
+        files = google_drive.files().list(q="mimeType='application/pdf'", pageToken=next_page_token).execute()
+        next_page_token = files.get('nextPageToken')
+        items = files.get('files', [])
+        for i, f in enumerate(items):
+            count = 1
+            file = google_drive.files().get(fileId=f.get('id'), fields='thumbnailLink, id, name, webViewLink, parents').execute()
+            if not frappe.db.exists('E-Books', file.get('id')):
+                doc = frappe.new_doc('E-Books')
+                doc.file_name = file.get('name')
+                doc.id = file.get('id')
+                doc.image = file.get('thumbnailLink')
+                doc.web_view_link = file.get('webViewLink')
+                parent = file.get('parents')
+                if parent:
+                    category = get_folder(google_drive, parent[0]).get('name')
+                    if not frappe.db.exists('E-Book Category', parent[0]):
+                        category_doc = frappe.new_doc('E-Book Category')
+                        category_doc.category_name = category
+                        category_doc.category_id = parent[0]
+                        category_doc.insert(ignore_permissions=True)
+                    doc.category = parent[0]
+                    doc.category_name = category
+                doc.thumbnail_link = file.get('thumbnailLink')
+                doc.insert(ignore_permissions=True)
+            frappe.publish_progress(int((i/len(items)) * 100), title='Fetching E-Books', doctype='E-Books', description='Fetching E-Books')
+        if not next_page_token:
+            break  # Exit the loop if there are no more pages
+    return next_page_token

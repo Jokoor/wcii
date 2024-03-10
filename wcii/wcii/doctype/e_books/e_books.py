@@ -7,4 +7,4 @@ from frappe.model.document import Document
 
 class EBooks(Document):
 	def autoname(self):
-		self.name = self.file_name
+		self.name = self.id

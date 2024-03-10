@@ -1,0 +1,35 @@
+{% extends "templates/web.html" %}
+{% block page_sidebar %}
+    {% include "templates/includes/web_sidebar.html" %}
+{% endblock %}
+    
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Library</h1>
+            <div class="d-flex flex-wrap">
+                {% set books = frappe.get_all('E-Books', fields=['file_name', 'image', 'web_view_link', 'category_name']) %}
+                {% for book in books %}
+                <div class="col-md-3 mb-3">
+                    <div class="card shadow hover">
+                        <img src="{{ book.image }}" class="card-img-top" alt="..." style="max-height: 200px;">
+                        <div class="card-body p-2">
+                            <p class="card-title text-center">{{ book.file_name }}</p>
+                            <a href="{{ book.web_view_link }}" class="stretched-link" target="_blank" ></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card.hover:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease-in-out;
+    }
+</style>
+{% endblock %}

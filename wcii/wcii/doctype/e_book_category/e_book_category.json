@@ -1,26 +1,32 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:category_name",
+ "autoname": "field:category_id",
  "creation": "2024-01-06 23:59:39.220621",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "category_name"
+  "category_name",
+  "category_id"
  ],
  "fields": [
   {
    "fieldname": "category_name",
    "fieldtype": "Data",
-   "label": "categoryName",
+   "label": "Category Name"
+  },
+  {
+   "fieldname": "category_id",
+   "fieldtype": "Data",
+   "label": "Category ID",
    "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-06 13:10:02.230819",
+ "modified": "2024-03-08 07:37:00.499316",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "E-Book Category",
@@ -73,5 +79,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "category_name"
 }
