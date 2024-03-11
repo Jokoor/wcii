@@ -16,6 +16,8 @@
   "attachment",
   "column_break_tdn0s",
   "description",
+  "route",
+  "publish",
   "submissions_tab",
   "submissions"
  ],
@@ -76,11 +78,24 @@
    "fieldtype": "Table",
    "label": "Submissions",
    "options": "Assignment Submissions"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "publish",
+   "fieldtype": "Check",
+   "label": "Publish"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "publish",
  "links": [],
- "modified": "2024-03-06 13:09:33.992680",
+ "modified": "2024-03-09 13:52:40.329249",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Assignment",
@@ -127,6 +142,7 @@
    "role": "Student"
   }
  ],
+ "route": "route",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

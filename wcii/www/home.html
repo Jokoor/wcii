@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="./logos/logo-no-background.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link
+		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap"
+		media="print" id="google-font" rel="stylesheet" />
+	<script>
+		const gf = document.getElementById("google-font")
+		gf.onload = () => {
+			gf.removeAttribute("media")
+		}
+	</script>
+
+	<link href="./_app/immutable/assets/0.C2Yrshq-.css" rel="stylesheet">
+	<link rel="modulepreload" href="./_app/immutable/entry/start.C-GBPOhp.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/entry.Bxr674mu.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.4DhuARt3.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/index.Cg4H_IDR.js">
+	<link rel="modulepreload" href="./_app/immutable/entry/app._cc41L-j.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/index.DFJT2Gwo.js">
+	<link rel="modulepreload" href="./_app/immutable/nodes/0.qCVtzyJT.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/stores.76aYvh_a.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/Button.BqUzGTIN.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/tw-merge.QHD3kepf.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/prefers-reduced-motion.DXu69rMB.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/Container.B28MuDHi.js">
+	<link rel="modulepreload" href="./_app/immutable/nodes/2.CRptN_hU.js">
+	<noscript>
+		<link
+			href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap"
+			rel="stylesheet" />
+	</noscript>
+</head>
+
+<body data-sveltekit-preload-data="hover">
+	<div id="main" style="display: contents">
+		<main class="relative  min-h-screen flex flex-col justify-between">
+			<div class="w-full sticky top-0 z-50 black-gradient svelte-18pkgve">
+				<section style="--container-padding: 16px" class="mx-auto container-max-width ">
+					<nav
+						class="bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 border-gray-100 dark:border-gray-700 divide-gray-100 dark:divide-gray-700 px-2 sm:px-4 py-2.5 w-full !bg-transparent !text-white !px-0 sm:!px-0 md:!px-0 lg:!px-0">
+						<div class="mx-auto flex flex-wrap justify-between items-center w-full"><a href="/"
+								class="flex items-center"><img src="/logos/logo-no-background.png"
+									class="me-3 h-6 sm:h-9" alt="WCII Logo"> <span
+									class="self-center whitespace-nowrap text-3xl font-semibold dark:text-white"
+									data-svelte-h="svelte-ff1a5e">WCII</span></a>
+							<div class="flex md:order-2"><button type="button" role="button"
+									class="text-center font-medium focus:ring-4 focus:outline-none inline-flex items-center justify-center px-5 py-3 text-base text-white bg-primary-700 hover:bg-primary-800 dark:bg-primary-600 dark:hover:bg-primary-700 focus:ring-primary-300 dark:focus:ring-primary-800 rounded-lg">Goto
+									Portal</button> <button type="button"
+									class="focus:outline-none whitespace-normal m-0.5 rounded-lg focus:ring-2 p-1.5 focus:ring-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600 ml-3 md:hidden"
+									aria-label="Open main menu"><span class="sr-only">Open main menu</span> <svg
+										xmlns="http://www.w3.org/2000/svg" role="button" tabindex="0" width="24"
+										height="24" class="h-6 w-6 shrink-0" aria-label="bars 3" fill="none"
+										viewBox="0 0 24 24" stroke-width="2"><!-- HTML_TAG_START -->
+										<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+											d="M4 6h16M4 12h16M4 18h16"></path> <!-- HTML_TAG_END -->
+									</svg> </button> </div>
+							<div class="w-full md:block md:w-auto order-1" hidden>
+								<ul
+									class="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+									<li><a href="/" active
+											class="block py-2 pr-4 pl-3 md:p-0 rounded md:border-0 text-white bg-blue-700 md:bg-transparent md:text-blue-500 md:dark:text-white dark:bg-black md:dark:bg-transparent text-lg">Home</a>
+									</li>
+									<li><a href="/about-us"
+											class="block py-2 pr-4 pl-3 md:p-0 rounded !text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-lg">About
+											Us</a></li>
+									<li><a href="/e-library"
+											class="block py-2 pr-4 pl-3 md:p-0 rounded !text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-lg">E-library</a>
+									</li>
+									<li><a href="/contact"
+											class="block py-2 pr-4 pl-3 md:p-0 rounded !text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-lg">Contact</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</section>
+			</div>
+			<div class="w-full flex-grow flex flex-col bg-white">
+				<section class="w-full h-screen bg-slate-300 mt-[-60px] md:mt-[-80px] relative overflow-hidden z-[0]">
+					<div class="fixed h-screen w-screen"> <img src="/heros/hero.jpg" loading="eager" alt="hero"
+							class="top-0 object-cover z-10 h-full w-full">
+						<div class="absolute top-[50%] inset-x-0 w-full text-center z-20">
+							<section style="--container-padding: 16px" class="mx-auto container-max-width ">
+								<h1 class="text-5xl md:text-6xl font-black text-white" data-svelte-h="svelte-1mxnmj9">
+									West Coast International Institute</h1>
+							</section>
+						</div> <button
+							class="absolute bottom-0 inset-x-0 z-20 text-2xl font-semibold flex justify-center items-center gap-2 py-3 bg-blue-500 text-white">Explore
+							WCII <span class="animate-ping"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+									height="1em" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round"
+									class="feather feather-chevron-down ">
+									<polyline points="6 9 12 15 18 9"></polyline>
+								</svg></span></button>
+					</div>
+				</section>
+				<div class="w-full h-1 pt-20 z-[-1] bg-red-400" id="scroll-to-item"></div>
+				<div class="bg-white z-[1] min-h-screen">
+					<section class="">
+						<section style="--container-padding: 16px"
+							class="mx-auto container-max-width py-16 flex flex-col gap-6 justify-center items-center">
+							<h3 class="text-5xl md:text-6xl font-black text-black" data-svelte-h="svelte-67ux4j">Why
+								WCII</h3>
+							<p class="text-3xl font-light balance text-center" data-svelte-h="svelte-1cwg9m3">West Coast
+								International Institute is a not-for-profit educational establishment offering
+								innovative and higher education programmes in an excellent academic environment. WCII
+								has
+								been a centre of excellence since its establishment, offering Certificate, Professional
+								Diploma and Advanced professional Diploma programmes accredited by (NAQAA) National
+								Accreditation &amp; Quality Assurance Authority in the Gambia. These programs are
+								further
+								accredited and approved by our international academic partners globally.</p>
+						</section>
+						<section style="--container-padding: 16px"
+							class="mx-auto container-max-width grid grid-cols-1 md:grid-cols-2 gap-4">
+							<div
+								class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md flex max-w-2xl flex-col md:flex-row md:max-w-xl !max-w-[unset]">
+								<img class="rounded-t-lg object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+									src="/why-wcii/quality.png" alt="">
+								<div class="p-4 sm:p-6">
+									<h5 class="mb-2 text-3xl font-bold tracking-tight text-black dark:text-white">
+										QUALITY EDUCATION</h5>
+									<p class="mb-3 font-light text-2xl text-gray-700 dark:text-gray-400 leading-tight">
+										Focuses on professional excellence, quality education, and lifelong learning,
+										utilizing experienced staff with global expertise to ensure strategic growth and
+										reliable learning opportunities.</p>
+								</div>
+							</div>
+							<div
+								class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md flex max-w-2xl flex-col md:flex-row md:max-w-xl !max-w-[unset]">
+								<img class="rounded-t-lg object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+									src="/why-wcii/education.jpg" alt="">
+								<div class="p-4 sm:p-6">
+									<h5 class="mb-2 text-3xl font-bold tracking-tight text-black dark:text-white">UNIQUE
+										SERVICES</h5>
+									<p class="mb-3 font-light text-2xl text-gray-700 dark:text-gray-400 leading-tight">
+										Prioritizes practical education, focusing on critical thinking, collaboration,
+										and tech literacy, to prepare students for success in modern workplaces and meet
+										21st-century demands.</p>
+								</div>
+							</div>
+						</section>
+						<section class="!bg-[#f4f4f4] relative py-6 sm:py-10 my-16">
+							<section style="--container-padding: 16px"
+								class="mx-auto container-max-width grid grid-cols-1 md:grid-cols-2 gap-6"><img
+									class="w-full rounded-lg shadow-lg" src="/partners/mou.jpg" alt="IAM MOU">
+								<div class="flex flex-col justify-center">
+									<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white"
+										data-svelte-h="svelte-1dz9f6s">What next after you complete your program?</h2>
+									<p class="mb-6 font-light text-2xl text-gray-700 dark:text-gray-400 leading-tight"
+										data-svelte-h="svelte-17vc0s5">West Coast International Institute has partnered
+										with the African Institute of
+										Management (IAM) in Dakar through a memorandum of understanding (MOU) for a
+										Bachelor&#39;s
+										Degree completion program. Students who finish our 2-year Advanced Professional
+										Diploma
+										can directly enter the final year at IAM in Dakar.</p> <a href="/"
+										class="inline-flex items-center w-max text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">Learn
+										More
+										<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+											class="shrink-0 w-5 h-5 ml-2 -mr-1" role="img"
+											aria-label="arrow right solid" viewBox="0 0 14 12">
+											<path fill="currentColor"
+												d="M13.923 6.382a1 1 0 0 0-.217-1.09l-4-4a1 1 0 1 0-1.414 1.414L10.586 5H1a1 1 0 0 0 0 2h9.586L8.293 9.293a1 1 0 1 0 1.414 1.414l4-4a.999.999 0 0 0 .216-.325Z">
+											</path>
+										</svg> </a>
+								</div>
+							</section>
+						</section>
+						<section>
+							<section style="--container-padding: 16px" class="mx-auto container-max-width ">
+								<h3 class="text-5xl md:text-6xl font-black text-center text-black"
+									data-svelte-h="svelte-d37we5">Our Partners</h3>
+								<div class="relative flex overflow-hidden w-[100%] pt-8" role="banner">
+									<div class="flex justify-around items-center min-w-[100%]"
+										style="transform: translateX(0px)"><img class="w-10 h-10 md:w-20 md:h-20"
+											loading="lazy" alt="AIM" src="/partners/aim.jpg"><img
+											class="w-10 h-10 md:w-20 md:h-20" loading="lazy" alt="NAQAA"
+											src="/partners/naqaa.jpg"><img class="w-10 h-10 md:w-20 md:h-20"
+											loading="lazy" alt="CYPRUS" src="/partners/cyprus.jpg"><img
+											class="w-10 h-10 md:w-20 md:h-20" loading="lazy" alt="DMS"
+											src="/partners/dms.jpg"><img class="w-10 h-10 md:w-20 md:h-20"
+											loading="lazy" alt="EQU" src="/partners/equ.jpg"><img
+											class="w-10 h-10 md:w-20 md:h-20" loading="lazy" alt=" QUALIFI"
+											src="/partners/qualifi.jpg"></div>
+									<div class="flex justify-around items-center min-w-[100%]"
+										style="transform: translateX(0px)"><img class="w-10 h-10 md:w-20 md:h-20"
+											loading="lazy" alt="AIM" src="/partners/aim.jpg"><img
+											class="w-10 h-10 md:w-20 md:h-20" loading="lazy" alt="NAQAA"
+											src="/partners/naqaa.jpg"><img class="w-10 h-10 md:w-20 md:h-20"
+											loading="lazy" alt="CYPRUS" src="/partners/cyprus.jpg"><img
+											class="w-10 h-10 md:w-20 md:h-20" loading="lazy" alt="DMS"
+											src="/partners/dms.jpg"><img class="w-10 h-10 md:w-20 md:h-20"
+											loading="lazy" alt="EQU" src="/partners/equ.jpg"><img
+											class="w-10 h-10 md:w-20 md:h-20" loading="lazy" alt=" QUALIFI"
+											src="/partners/qualifi.jpg"></div>
+								</div>
+							</section>
+						</section>
+						<hr class="my-16">
+						<section style="--container-padding: 16px" class="mx-auto container-max-width ">
+							<h3 class="text-5xl md:text-6xl font-black text-center text-black"
+								data-svelte-h="svelte-1svomkt">Facilities</h3>
+							<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+								<div
+									class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md flex max-w-2xl flex-col p-0 !max-w-[unset]">
+									<img src="/why-wcii/elibrary.jpg" alt="Standard Library" loading="lazy"
+										class="aspect-[4/3] w-full">
+									<div class="p-4">
+										<h5 class="mb-2 text-3xl font-bold tracking-tight text-black dark:text-white">
+											Standard Library</h5>
+										<p
+											class="mb-3 font-light text-2xl text-gray-700 dark:text-gray-400 leading-tight">
+											The college provides access to over 3,000 textbooks, journals, and articles
+											through its physical and E-library resources. </p>
+									</div>
+								</div>
+								<div
+									class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md flex max-w-2xl flex-col p-0 !max-w-[unset]">
+									<img src="/why-wcii/facilities.webp" alt="Modern Facilities" loading="lazy"
+										class="aspect-[4/3] w-full">
+									<div class="p-4">
+										<h5 class="mb-2 text-3xl font-bold tracking-tight text-black dark:text-white">
+											Modern Facilities</h5>
+										<p
+											class="mb-3 font-light text-2xl text-gray-700 dark:text-gray-400 leading-tight">
+											The college has modern facilities including a computer lab, and a
+											well-equipped lecture hall. </p>
+									</div>
+								</div>
+								<div
+									class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md flex max-w-2xl flex-col p-0 !max-w-[unset]">
+									<img src="/why-wcii/support.webp" alt="Student Support" loading="lazy"
+										class="aspect-[4/3] w-full">
+									<div class="p-4">
+										<h5 class="mb-2 text-3xl font-bold tracking-tight text-black dark:text-white">
+											Student Support</h5>
+										<p
+											class="mb-3 font-light text-2xl text-gray-700 dark:text-gray-400 leading-tight">
+											The college has a student support system that includes academic advising,
+											career counseling, and personal counseling. </p>
+									</div>
+								</div>
+								<div
+									class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md flex max-w-2xl flex-col p-0 !max-w-[unset]">
+									<img src="/why-wcii/environment.jpg" alt="Conducive Environment" loading="lazy"
+										class="aspect-[4/3] w-full">
+									<div class="p-4">
+										<h5 class="mb-2 text-3xl font-bold tracking-tight text-black dark:text-white">
+											Conducive Environment</h5>
+										<p
+											class="mb-3 font-light text-2xl text-gray-700 dark:text-gray-400 leading-tight">
+											Offering innovative and higher education programmes in an excellent academic
+											environment. </p>
+									</div>
+								</div>
+							</div>
+						</section>
+						<hr class="my-16">
+						<section style="--container-padding: 16px" class="mx-auto container-max-width ">
+							<h3 class="text-5xl md:text-6xl font-black text-center text-black"
+								data-svelte-h="svelte-hy5r0x">Programs</h3>
+							<div class="flex flex-wrap justify-center gap-4 mt-6">
+								<div
+									class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md flex max-w-sm flex-col p-4 sm:p-6 hover:card-transform transition-transform">
+									<h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+										Foundation Certificate</h5>
+									<p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">This program
+										is meticulously crafted for individuals aiming to attain a Professional
+										Qualification, with the opportunity to progress further into the Professional
+										and Advanced Professional Diploma programs.</p>
+								</div>
+								<div
+									class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md flex max-w-sm flex-col p-4 sm:p-6 hover:card-transform transition-transform">
+									<h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+										Professional Diploma Programs</h5>
+									<p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">The college
+										offers professional diploma programs in various fields including Management, HR
+										and Accounting and finance</p>
+								</div>
+								<div
+									class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md flex max-w-sm flex-col p-4 sm:p-6 hover:card-transform transition-transform">
+									<h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+										Advanced Professional Diploma Programs</h5>
+									<p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">The college
+										offers advanced professional diploma programs in various fields including
+										Management, HR and Accounting and finance</p>
+								</div>
+							</div>
+						</section>
+						<div class="h-20 w-full"></div>
+						<section style="--container-padding: 16px" class="mx-auto container-max-width ">
+							<h3 class="text-5xl md:text-6xl font-black text-center text-black"
+								data-svelte-h="svelte-1f0wgki">Courses</h3>
+							<div class="flex flex-wrap justify-center gap-4 mt-6 pb-2">
+								<div
+									class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md flex max-w-sm flex-col p-4 sm:p-6 hover:shadow-none transition-shadow">
+									<h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+										Business Management</h5>
+									<p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">Detailed
+										courses in Business Management across all program levels.</p>
+									<ul class="mt-4">
+										<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor" class="shrink-0 w-4 h-4" role="img"
+												aria-label="arrow right solid" viewBox="0 0 14 12">
+												<path fill="currentColor"
+													d="M13.923 6.382a1 1 0 0 0-.217-1.09l-4-4a1 1 0 1 0-1.414 1.414L10.586 5H1a1 1 0 0 0 0 2h9.586L8.293 9.293a1 1 0 1 0 1.414 1.414l4-4a.999.999 0 0 0 .216-.325Z">
+												</path>
+											</svg> <a href="/foundation-certificate~business-management"
+												class="text-blue-500 hover:underline">Foundation Certificate</a> </li>
+										<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor" class="shrink-0 w-4 h-4" role="img"
+												aria-label="arrow right solid" viewBox="0 0 14 12">
+												<path fill="currentColor"
+													d="M13.923 6.382a1 1 0 0 0-.217-1.09l-4-4a1 1 0 1 0-1.414 1.414L10.586 5H1a1 1 0 0 0 0 2h9.586L8.293 9.293a1 1 0 1 0 1.414 1.414l4-4a.999.999 0 0 0 .216-.325Z">
+												</path>
+											</svg> <a href="/professional-diploma~business-management"
+												class="text-blue-500 hover:underline">Professional Diploma</a> </li>
+										<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor" class="shrink-0 w-4 h-4" role="img"
+												aria-label="arrow right solid" viewBox="0 0 14 12">
+												<path fill="currentColor"
+													d="M13.923 6.382a1 1 0 0 0-.217-1.09l-4-4a1 1 0 1 0-1.414 1.414L10.586 5H1a1 1 0 0 0 0 2h9.586L8.293 9.293a1 1 0 1 0 1.414 1.414l4-4a.999.999 0 0 0 .216-.325Z">
+												</path>
+											</svg> <a href="/advanced-professional-diploma~business-management"
+												class="text-blue-500 hover:underline">Advanced Professional Diploma</a>
+										</li>
+									</ul>
+								</div>
+								<div
+									class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md flex max-w-sm flex-col p-4 sm:p-6 hover:shadow-none transition-shadow">
+									<h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+										Human Resource Management</h5>
+									<p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">Detailed
+										courses in Human Resource Management for Diploma programs</p>
+									<ul class="mt-4">
+										<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor" class="shrink-0 w-4 h-4" role="img"
+												aria-label="arrow right solid" viewBox="0 0 14 12">
+												<path fill="currentColor"
+													d="M13.923 6.382a1 1 0 0 0-.217-1.09l-4-4a1 1 0 1 0-1.414 1.414L10.586 5H1a1 1 0 0 0 0 2h9.586L8.293 9.293a1 1 0 1 0 1.414 1.414l4-4a.999.999 0 0 0 .216-.325Z">
+												</path>
+											</svg> <a href="/professional-diploma~human-resource-management"
+												class="text-blue-500 hover:underline">Professional Diploma</a> </li>
+										<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor" class="shrink-0 w-4 h-4" role="img"
+												aria-label="arrow right solid" viewBox="0 0 14 12">
+												<path fill="currentColor"
+													d="M13.923 6.382a1 1 0 0 0-.217-1.09l-4-4a1 1 0 1 0-1.414 1.414L10.586 5H1a1 1 0 0 0 0 2h9.586L8.293 9.293a1 1 0 1 0 1.414 1.414l4-4a.999.999 0 0 0 .216-.325Z">
+												</path>
+											</svg> <a href="/advanced-professional-diploma~human-resource-management"
+												class="text-blue-500 hover:underline">Advanced Professional Diploma</a>
+										</li>
+									</ul>
+								</div>
+								<div
+									class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md flex max-w-sm flex-col p-4 sm:p-6 hover:shadow-none transition-shadow">
+									<h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+										Accounting and Finance</h5>
+									<p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">Detailed
+										courses in Accounting and Finance for Diploma programs</p>
+									<ul class="mt-4">
+										<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor" class="shrink-0 w-4 h-4" role="img"
+												aria-label="arrow right solid" viewBox="0 0 14 12">
+												<path fill="currentColor"
+													d="M13.923 6.382a1 1 0 0 0-.217-1.09l-4-4a1 1 0 1 0-1.414 1.414L10.586 5H1a1 1 0 0 0 0 2h9.586L8.293 9.293a1 1 0 1 0 1.414 1.414l4-4a.999.999 0 0 0 .216-.325Z">
+												</path>
+											</svg> <a href="/professional-diploma~accounting-and-finance"
+												class="text-blue-500 hover:underline">Professional Diploma</a> </li>
+										<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor" class="shrink-0 w-4 h-4" role="img"
+												aria-label="arrow right solid" viewBox="0 0 14 12">
+												<path fill="currentColor"
+													d="M13.923 6.382a1 1 0 0 0-.217-1.09l-4-4a1 1 0 1 0-1.414 1.414L10.586 5H1a1 1 0 0 0 0 2h9.586L8.293 9.293a1 1 0 1 0 1.414 1.414l4-4a.999.999 0 0 0 .216-.325Z">
+												</path>
+											</svg> <a href="/advanced-professional-diploma~accounting-and-finance"
+												class="text-blue-500 hover:underline">Advanced Professional Diploma</a>
+										</li>
+									</ul>
+								</div>
+								<div
+									class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md flex max-w-sm flex-col p-4 sm:p-6 hover:shadow-none transition-shadow">
+									<h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+										Marketing</h5>
+									<p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">Detailed
+										courses in Marketing for Diploma programs</p>
+									<ul class="mt-4">
+										<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor" class="shrink-0 w-4 h-4" role="img"
+												aria-label="arrow right solid" viewBox="0 0 14 12">
+												<path fill="currentColor"
+													d="M13.923 6.382a1 1 0 0 0-.217-1.09l-4-4a1 1 0 1 0-1.414 1.414L10.586 5H1a1 1 0 0 0 0 2h9.586L8.293 9.293a1 1 0 1 0 1.414 1.414l4-4a.999.999 0 0 0 .216-.325Z">
+												</path>
+											</svg> <a href="/professional-diploma~marketing"
+												class="text-blue-500 hover:underline">Professional Diploma</a> </li>
+										<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg"
+												fill="currentColor" class="shrink-0 w-4 h-4" role="img"
+												aria-label="arrow right solid" viewBox="0 0 14 12">
+												<path fill="currentColor"
+													d="M13.923 6.382a1 1 0 0 0-.217-1.09l-4-4a1 1 0 1 0-1.414 1.414L10.586 5H1a1 1 0 0 0 0 2h9.586L8.293 9.293a1 1 0 1 0 1.414 1.414l4-4a.999.999 0 0 0 .216-.325Z">
+												</path>
+											</svg> <a href="/advanced-professional-diploma~marketing"
+												class="text-blue-500 hover:underline">Advanced Professional Diploma</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+				</div>
+			</div>
+			<div class="bg-white w-full h-24 relative z-10"></div>
+			<div class="w-full bg-blue-50 relative z-10">
+				<section style="--container-padding: 16px" class="mx-auto container-max-width ">
+					<footer class="p-4 sm:p-6 dark:bg-gray-800 bg-blue-50">
+						<div class="md:flex md:justify-between">
+							<div class="mb-6 md:mb-0"><a href="/" class="flex items-center"><img
+										src="/logos/logo-no-background.png" class="mr-3 h-8" alt="WCII Logo"> <span
+										class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">WCII</span>
+								</a> </div>
+							<div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+								<div>
+									<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
+										data-svelte-h="svelte-1xh36uc">Important links</h2>
+									<ul class="text-gray-600 dark:text-gray-400">
+										<li class="mb-4"><a href="/" class="hover:underline">Portal app</a></li>
+										<li class="mb-4"><a href="/" class="hover:underline">E-library</a></li>
+									</ul>
+								</div>
+								<div>
+									<h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white"
+										data-svelte-h="svelte-iw75us">Follow us</h2>
+									<ul class="text-gray-600 dark:text-gray-400">
+										<li class="mb-4"><a href="/" class="hover:underline">Facebook</a></li>
+										<li class="mb-4"><a href="/" class="hover:underline">Twitter</a></li>
+									</ul>
+								</div>
+								<div data-svelte-h="svelte-rb1n9p">
+									<h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+										Contact</h2>
+									<div class="text-gray-500">
+										<p>West Coast International Institute</p>
+										<p>Old Yundum</p>
+										<p>P.O. Box 2186</p>
+										<p>The Gambia</p>
+										<p>Tel: +220 3011373 / 9134093 / 7811667</p>
+										<p>Email: info@wcii.gm</p>
+										<p>Website: www.wcii.gm</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+						<div class="sm:flex sm:items-center sm:justify-between">
+							<div class="flex gap-1 items-center flex-col md:flex-row text-center"><span
+									class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <span
+										class="ml-1">West Coast International Institute</span> All Rights
+									Reserved.</span> <span class="text-gray-300 hidden md:hidden"
+									data-svelte-h="svelte-1vztqoz">|</span>
+								<div data-svelte-h="svelte-dazygi"><span class="text-sm text-gray-500">Developed by
+									</span><a href="/" class="text-gray-800 hover:underline text-sm">Jokoor</a></div>
+							</div>
+							<div class="flex mt-4 space-x-6 rtl:space-x-reverse sm:justify-center sm:mt-0"><a href="/"
+									aria-label="" class="text-gray-500 hover:text-gray-900 dark:hover:text-white"><svg
+										xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+										class="shrink-0 w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white"
+										role="img" aria-label="facebook solid" viewBox="0 0 8 19">
+										<path fill="currentColor" fill-rule="evenodd"
+											d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+											clip-rule="evenodd"></path>
+									</svg> </a> <a href="/" aria-label=""
+									class="text-gray-500 hover:text-gray-900 dark:hover:text-white"><svg
+										xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+										class="shrink-0 w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white"
+										role="img" aria-label="twitter solid" viewBox="0 0 20 17">
+										<path fill="currentColor" fill-rule="evenodd"
+											d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.981A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.349-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
+											clip-rule="evenodd"></path>
+									</svg> </a> </div>
+						</div>
+					</footer>
+				</section>
+			</div>
+		</main>
+		<div class="z-[9999999999999999999999999] relative"> </div>
+
+		<script>
+			{
+				__sveltekit_725rgw = {
+					base: new URL(".", location).pathname.slice(0, -1)
+				};
+
+				const element = document.currentScript.parentElement;
+
+				const data = [null, null];
+
+				Promise.all([
+					import("./_app/immutable/entry/start.C-GBPOhp.js"),
+					import("./_app/immutable/entry/app._cc41L-j.js")
+				]).then(([kit, app]) => {
+					kit.start(app, element, {
+						node_ids: [0, 2],
+						data,
+						form: null,
+						error: null
+					});
+				});
+			} 
+		</script>
+	</div>
+</body>
+
+</html>

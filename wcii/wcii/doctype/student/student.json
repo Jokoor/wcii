@@ -32,7 +32,7 @@
   "guardian_details_section",
   "guardians",
   "program_courses_tab",
-  "course",
+  "coursess",
   "section_break_wsd8i",
   "modules",
   "fees_tab",
@@ -182,12 +182,6 @@
    "options": "Student Fees"
   },
   {
-   "fieldname": "course",
-   "fieldtype": "Table",
-   "label": "Course",
-   "options": "Student Courses"
-  },
-  {
    "fieldname": "modules",
    "fieldtype": "Table",
    "label": "Modules",
@@ -237,11 +231,17 @@
    "fieldname": "fullname",
    "fieldtype": "Data",
    "label": "fullname"
+  },
+  {
+   "fieldname": "coursess",
+   "fieldtype": "Table",
+   "label": "Course",
+   "options": "Student Courses"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-07 18:00:23.786174",
+ "modified": "2024-03-07 18:32:54.621401",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Student",

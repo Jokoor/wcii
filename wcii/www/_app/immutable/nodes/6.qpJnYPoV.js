@@ -1,0 +1,1 @@
+import{s as n,t as o,d as i,i as c,n as e,f as l}from"../chunks/scheduler.4DhuARt3.js";import{S as m,i as p}from"../chunks/index.DFJT2Gwo.js";function f(r){let t;return{c(){t=o("E-library")},l(a){t=i(a,"E-library")},m(a,s){c(a,t,s)},p:e,i:e,o:e,d(a){a&&l(t)}}}class x extends m{constructor(t){super(),p(this,t,null,f,n,{})}}export{x as component};
