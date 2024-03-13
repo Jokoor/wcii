@@ -26,10 +26,11 @@
    "label": "Instructor Name"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-10 11:54:00.839601",
+ "modified": "2024-03-12 05:24:04.198448",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Instructor Group",

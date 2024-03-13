@@ -50,9 +50,10 @@
    "options": "Academic Year"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-07 02:59:50.351644",
+ "modified": "2024-03-12 05:24:01.468297",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Exam Schedule",

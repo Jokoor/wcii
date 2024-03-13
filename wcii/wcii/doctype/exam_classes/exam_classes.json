@@ -34,10 +34,11 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-02-07 03:11:20.107839",
+ "modified": "2024-03-12 05:24:01.155778",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Exam Classes",

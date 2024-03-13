@@ -6,7 +6,9 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "course"
+  "course",
+  "course_name",
+  "enrollment_date"
  ],
  "fields": [
   {
@@ -15,12 +17,25 @@
    "in_list_view": 1,
    "label": "Course",
    "options": "Course"
+  },
+  {
+   "fieldname": "course_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Course Name"
+  },
+  {
+   "fieldname": "enrollment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Enrollment Date"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-13 00:33:30.868007",
+ "modified": "2024-03-12 05:23:45.395478",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Student Courses",

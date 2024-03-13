@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-03-12 02:50:32.116358",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "register_no_prefix_section",
+  "institution_code_prefix",
+  "register_no_start_from",
+  "register_no_digit"
+ ],
+ "fields": [
+  {
+   "fieldname": "register_no_prefix_section",
+   "fieldtype": "Section Break",
+   "label": "Register No Prefix"
+  },
+  {
+   "fieldname": "institution_code_prefix",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Institution Code (Prefix) ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "register_no_start_from",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Register No Start From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "register_no_digit",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Register No Digit",
+   "reqd": 1
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-03-12 05:23:47.364658",
+ "modified_by": "Administrator",
+ "module": "Wcii",
+ "name": "School Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -11,8 +11,10 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = "/assets/wcii/css/wcii.css"
-# app_include_js = "/assets/wcii/js/wcii.js"
+# app_include_css = "/assets/wcii/css/wcii.css"
+# app_include_js = [
+#     "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js",
+#     ]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/wcii/css/wcii.css"
@@ -50,7 +52,7 @@ app_include_css = "/assets/wcii/css/wcii.css"
 
 # automatically create page for each record of this doctype
 # website_generators = ["Web Page"]
-
+website_generators = ["Assignment"]
 # Jinja
 # ----------
 
@@ -64,7 +66,7 @@ app_include_css = "/assets/wcii/css/wcii.css"
 # ------------
 
 # before_install = "wcii.install.before_install"
-# after_install = "wcii.install.after_install"
+after_install = "wcii.api.after_install"
 
 # Uninstallation
 # ------------

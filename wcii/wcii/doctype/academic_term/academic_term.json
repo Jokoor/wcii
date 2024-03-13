@@ -10,23 +10,13 @@
   "academic_year",
   "term_name",
   "column_break_4x80c",
-  "term_start_date",
-  "term_end_date"
+  "start_date",
+  "end_date"
  ],
  "fields": [
   {
    "fieldname": "column_break_4x80c",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "term_start_date",
-   "fieldtype": "Date",
-   "label": "Term Start Date"
-  },
-  {
-   "fieldname": "term_end_date",
-   "fieldtype": "Date",
-   "label": "Term End Date"
   },
   {
    "fieldname": "term_name",
@@ -38,11 +28,22 @@
    "fieldtype": "Link",
    "label": "Academic Year",
    "options": "Academic Year"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Term Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "Term End Date"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-06 13:28:28.172712",
+ "modified": "2024-03-12 05:23:49.105163",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Academic Term",

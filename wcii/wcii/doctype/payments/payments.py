@@ -6,27 +6,31 @@ from frappe.model.document import Document
 
 class Payments(Document):
 	def validate(self):
+		self.outstanding_amount = self.fee_amount - self.paid_amount
 		fee_doc = frappe.get_doc("Fees", self.fee)
-		if fee_doc.outstanding_amount <= 0:
-			frappe.throw("There is no outstanding amount for this Fee")
+		if self.paid_amount <= 0:
+			frappe.throw("You cannot pay less than 0")
+		if self.paid_amount > fee_doc.outstanding_amount:
+			frappe.throw(f"You cannot pay more than {fee_doc.outstanding_amount}")
 
-	def before_naming(self):
-		if self.name:
-			frappe.throw("Payment can only be saved onced")
 
-	def before_save(self):
+	def on_submit(self):
 		fee_doc = frappe.get_doc("Fees", self.fee)
-		fee_doc.paid_amount = fee_doc.paid_amount + self.paid_amount
-		fee_doc.outstanding_amount = fee_doc.total_amount - fee_doc.paid_amount
-		if fee_doc.outstanding_amount < 0:
-			frappe.throw(f"You over paid the fee by {abs(fee_doc.outstanding_amount)}")
-		self.outstanding_amount=fee_doc.outstanding_amount
-		self.change_status(fee_doc)
-		fee_doc.save()
-		frappe.db.commit()
+		student = frappe.get_doc("Student", fee_doc.student)
+		frappe.db.set_value("Fees", self.fee, "paid_amount", fee_doc.paid_amount + self.paid_amount)
+		frappe.db.set_value("Fees", self.fee, "outstanding_amount", fee_doc.outstanding_amount - self.paid_amount)
+		if self.outstanding_amount == 0:
+			frappe.db.set_value("Fees", self.fee, "status", "Paid")
+			for fee in student.get("fees"):
+				if fee.fee == fee_doc.name:
+					fee.fee_status = "Paid"
+					student.save()
+	
+		elif self.outstanding_amount > 0:
+			frappe.db.set_value("Fees", self.fee, "status", "Partly-paid")
+			for fee in student.get("fees"):
+				if fee.fee == fee_doc.name:
+					fee.fee_status = "Partly-paid"
+					student.save()
 
-	def change_status(self, fee_doc):
-		if fee_doc.outstanding_amount == 0:
-			fee_doc.status = "PAID"
-		elif fee_doc.outstanding_amount > 0:
-			fee_doc.status = "PARTIALLY-PAID"
+	

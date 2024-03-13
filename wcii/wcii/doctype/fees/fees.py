@@ -5,13 +5,17 @@ import frappe
 from frappe.model.document import Document
 
 class Fees(Document):
-
-	def before_naming(self):
-		if self.name:
-			frappe.throw("Fee can only be saved onced")
-			
-	def after_insert(self):
+	def validate(self):
 		self.outstanding_amount = self.total_amount
-		self.status='UNPAID'
-		self.save()
-		frappe.db.commit()
+	def on_submit(self):
+		frappe.db.set_value("Fees", self.name, "status", "Unpaid")
+
+		student = frappe.get_doc("Student", self.student)
+		student.append("fees", {
+			"fee": self.name,
+			"amount": self.total_amount,
+			"fee_status": "Unpaid",
+			"fee_type": self.fee_type,
+		})
+		student.save(ignore_permissions=True)
+		frappe.msgprint("Fee added to Student")

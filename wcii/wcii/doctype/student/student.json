@@ -8,12 +8,16 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_ovm8h",
+  "column_break_mrdf",
+  "student_id",
+  "column_break_gkqz",
   "enabled",
   "section_break_nxpg3",
   "first_name",
   "middle_name",
-  "column_break_jz3tt",
   "last_name",
+  "column_break_jz3tt",
+  "full_name",
   "joining_date",
   "image",
   "personal_details_section",
@@ -32,9 +36,11 @@
   "guardian_details_section",
   "guardians",
   "program_courses_tab",
-  "coursess",
+  "courses",
   "section_break_wsd8i",
   "modules",
+  "section_break_jcpw",
+  "classes",
   "fees_tab",
   "fees",
   "exit_tab",
@@ -53,7 +59,7 @@
    "label": "Student Details"
   },
   {
-   "default": "0",
+   "default": "1",
    "fieldname": "enabled",
    "fieldtype": "Check",
    "label": "Enabled"
@@ -83,7 +89,7 @@
   },
   {
    "fieldname": "joining_date",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Joining Date"
   },
   {
@@ -173,19 +179,21 @@
   {
    "fieldname": "fees_tab",
    "fieldtype": "Tab Break",
-   "label": "Fees"
+   "label": "Fees",
+   "read_only": 1
   },
   {
    "fieldname": "fees",
    "fieldtype": "Table",
    "label": "Fees",
-   "options": "Student Fees"
+   "options": "Student Fees",
+   "read_only": 1
   },
   {
    "fieldname": "modules",
    "fieldtype": "Table",
    "label": "Modules",
-   "options": "Course Modules"
+   "options": "Student Modules"
   },
   {
    "fieldname": "email_address",
@@ -233,19 +241,49 @@
    "label": "fullname"
   },
   {
-   "fieldname": "coursess",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "courses",
    "fieldtype": "Table",
-   "label": "Course",
+   "label": "Courses",
    "options": "Student Courses"
+  },
+  {
+   "fieldname": "column_break_mrdf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "student_id",
+   "fieldtype": "Data",
+   "label": "Student ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gkqz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_jcpw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "classes",
+   "fieldtype": "Table",
+   "label": "Classes",
+   "options": "Student Classess"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-07 18:32:54.621401",
+ "modified": "2024-03-13 03:14:29.059835",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Student",
- "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -274,9 +312,9 @@
    "write": 1
   }
  ],
- "search_fields": "first_name",
+ "search_fields": "full_name",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "first_name"
+ "title_field": "full_name"
 }

@@ -9,8 +9,8 @@
  "engine": "InnoDB",
  "field_order": [
   "academic_year_name",
-  "year_start_date",
-  "year_end_date"
+  "start_date",
+  "end_date"
  ],
  "fields": [
   {
@@ -20,19 +20,20 @@
    "unique": 1
   },
   {
-   "fieldname": "year_start_date",
+   "fieldname": "start_date",
    "fieldtype": "Date",
    "label": "Year Start Date"
   },
   {
-   "fieldname": "year_end_date",
+   "fieldname": "end_date",
    "fieldtype": "Date",
    "label": "Year End Date"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-27 17:37:22.297667",
+ "modified": "2024-03-12 05:23:48.593073",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Academic Year",

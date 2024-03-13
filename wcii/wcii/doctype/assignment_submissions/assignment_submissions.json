@@ -39,10 +39,11 @@
    "options": "Student"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-02-22 21:19:33.622162",
+ "modified": "2024-03-12 05:23:57.086770",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Assignment Submissions",

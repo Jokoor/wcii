@@ -9,6 +9,7 @@
  "engine": "InnoDB",
  "field_order": [
   "module",
+  "module_name",
   "column_break_jwtsa",
   "academic_year",
   "academic_term",
@@ -17,7 +18,6 @@
   "instructors_tab",
   "instructors",
   "amended_from",
-  "module_name",
   "class_resources_tab",
   "resources"
  ],
@@ -70,19 +70,11 @@
    "read_only": 1
   },
   {
-   "fieldname": "module",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Module",
-   "options": "Module",
-   "reqd": 1
-  },
-  {
    "fetch_from": "module.module_name",
    "fieldname": "module_name",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Module Name"
+   "label": "Module Name",
+   "read_only": 1
   },
   {
    "fieldname": "class_resources_tab",
@@ -94,11 +86,20 @@
    "fieldtype": "Table",
    "label": "Resources",
    "options": "Resources"
+  },
+  {
+   "fieldname": "module",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Module",
+   "options": "Module",
+   "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-08 16:44:20.859046",
+ "modified": "2024-03-12 05:23:49.588199",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Class",

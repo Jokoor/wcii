@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{abbreviation}",
  "creation": "2023-12-05 03:51:01.120539",
  "default_view": "List",
  "doctype": "DocType",
@@ -11,10 +10,8 @@
   "module_name",
   "description",
   "column_break_kbpqt",
-  "abbreviation",
-  "assessement_tab",
-  "section_break_qnrfq",
-  "grading_scale",
+  "module_code",
+  "course",
   "resources_tab",
   "resources"
  ],
@@ -29,30 +26,9 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "assessement_tab",
-   "fieldtype": "Tab Break",
-   "label": "Assessement"
-  },
-  {
-   "fieldname": "section_break_qnrfq",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "grading_scale",
-   "fieldtype": "Data",
-   "label": "Grading Scale"
-  },
-  {
    "fieldname": "module_name",
    "fieldtype": "Data",
    "label": "Module Name"
-  },
-  {
-   "fieldname": "abbreviation",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Abbreviation",
-   "reqd": 1
   },
   {
    "fieldname": "resources_tab",
@@ -64,16 +40,29 @@
    "fieldtype": "Table",
    "label": "Resources",
    "options": "Resources"
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Course"
+  },
+  {
+   "fieldname": "module_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Module Code",
+   "reqd": 1,
+   "set_only_once": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-06 20:44:21.380372",
+ "modified": "2024-03-12 05:23:48.052372",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Module",
- "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

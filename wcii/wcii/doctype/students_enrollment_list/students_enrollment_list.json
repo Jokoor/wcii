@@ -25,10 +25,11 @@
    "label": "Student Name"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-11 20:46:35.899622",
+ "modified": "2024-03-12 05:24:03.867298",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Students Enrollment List",

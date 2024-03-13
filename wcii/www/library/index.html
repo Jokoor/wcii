@@ -1,16 +1,26 @@
 {% extends "templates/web.html" %}
-{% block page_sidebar %}
-    {% include "templates/includes/web_sidebar.html" %}
-{% endblock %}
+
+
+
     
-{% block content %}
+{% block page_content %}
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1>Library</h1>
             <div class="d-flex flex-wrap">
-                {% set books = frappe.get_all('E-Books', fields=['file_name', 'image', 'web_view_link', 'category_name']) %}
+                {% set books = frappe.get_all('E-Books', fields=['file_name', 'image', 'web_view_link']) %}
+               <!-- check if books -->
+               {% if not books %}
+                <div class="alert alert-warning" role="alert">
+                     No books found
+                </div>
+                {% endif %}
+            
+
                 {% for book in books %}
+
                 <div class="col-md-3 mb-3">
                     <div class="card shadow hover">
                         <img src="{{ book.image }}" class="card-img-top" alt="..." style="max-height: 200px;">

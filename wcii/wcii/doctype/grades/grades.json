@@ -41,10 +41,11 @@
    "reqd": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-02-07 04:16:35.916177",
+ "modified": "2024-03-12 05:24:00.417752",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Grades",

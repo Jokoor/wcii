@@ -51,10 +51,11 @@
    "label": "Code"
   }
  ],
+ "hide_toolbar": 1,
  "icon": "fa fa-globe",
  "idx": 1,
  "links": [],
- "modified": "2024-03-06 13:06:28.932296",
+ "modified": "2024-03-12 05:23:51.725899",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Country",
@@ -70,7 +71,6 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "set_user_permissions": 1,
    "share": 1,
    "write": 1
   },

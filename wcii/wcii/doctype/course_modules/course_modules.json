@@ -25,10 +25,11 @@
    "label": "Module Name"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-03-06 15:53:44.117935",
+ "modified": "2024-03-12 05:23:52.814300",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Course Modules",

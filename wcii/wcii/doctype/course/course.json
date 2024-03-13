@@ -8,20 +8,17 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "course_details_section",
   "course_name",
-  "abbreviation",
-  "description",
+  "course_code",
   "column_break_zeafb",
   "level",
+  "description",
+  "course_modules_tab",
   "section_break_fqecv",
   "modules"
  ],
  "fields": [
-  {
-   "fieldname": "abbreviation",
-   "fieldtype": "Data",
-   "label": "Abbreviation"
-  },
   {
    "fieldname": "column_break_zeafb",
    "fieldtype": "Column Break"
@@ -53,11 +50,27 @@
    "fieldname": "description",
    "fieldtype": "Data",
    "label": "Description"
+  },
+  {
+   "fieldname": "course_modules_tab",
+   "fieldtype": "Tab Break",
+   "label": "Course Modules"
+  },
+  {
+   "fieldname": "course_details_section",
+   "fieldtype": "Section Break",
+   "label": "Course Details"
+  },
+  {
+   "fieldname": "course_code",
+   "fieldtype": "Data",
+   "label": "Course Code"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-06 13:20:30.610131",
+ "modified": "2024-03-12 05:23:50.277343",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Course",

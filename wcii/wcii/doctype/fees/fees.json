@@ -10,29 +10,31 @@
  "field_order": [
   "student",
   "student_name",
-  "fee_type",
   "column_break_wvsxm",
   "academic_year",
+  "fee_type",
+  "due_date",
   "section_break_edakt",
   "total_amount",
   "column_break_fmhe6",
   "paid_amount",
   "outstanding_amount",
   "status",
-  "amended_from",
-  "description"
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "student",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Student",
    "options": "Student"
   },
   {
-   "fetch_from": "student.first_name",
+   "fetch_from": "student.full_name",
    "fieldname": "student_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Student Name"
   },
   {
@@ -55,6 +57,7 @@
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Total Amount",
    "options": "Company:company:default_currency",
    "set_only_once": 1
@@ -72,10 +75,12 @@
    "read_only": 1
   },
   {
+   "default": "Draft",
    "fieldname": "status",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Status",
-   "options": "UNPAID\nPARTIALLY-PAID\nPAID"
+   "options": "Draft\nUnpaid\nPartly-paid\nPaid\nOverdue"
   },
   {
    "fieldname": "paid_amount",
@@ -94,17 +99,19 @@
    "fieldname": "fee_type",
    "fieldtype": "Select",
    "label": "Fee Type",
-   "options": "ADMISSION\nTUITION\nEXAM\nLIBRARY\nOTHERS"
+   "options": "Admission\nTuition\nExam\nLibrary\nOther"
   },
   {
-   "fieldname": "description",
-   "fieldtype": "Data",
-   "label": "Description"
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-03-06 13:24:52.483140",
+ "modified": "2024-03-12 05:23:45.867585",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Fees",
@@ -157,6 +164,7 @@
    "share": 1
   }
  ],
+ "search_fields": "student_name,student",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [
@@ -176,5 +184,6 @@
    "color": "Green",
    "title": "Paid"
   }
- ]
+ ],
+ "title_field": "student_name"
 }

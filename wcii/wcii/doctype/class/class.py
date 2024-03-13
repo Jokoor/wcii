@@ -6,9 +6,16 @@ from frappe.model.document import Document
 
 
 class Class(Document):
-
-    # append the resource if the class is saved
-
+    def validate(self):
+        #add class to student classes
+        for student in self.students:
+            student_doc = frappe.get_doc('Student', student.student)
+            if not self.name in [d.class_id for d in student_doc.get("classes")]:
+                student_doc.append('classes', {
+                    'class_name': self.name,
+                    'module': self.module_name,
+                    })
+                student_doc.save()
     def after_insert(self):
         self.get_resource()
 

@@ -33,10 +33,11 @@
    "label": "Amount"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-05 04:34:28.322640",
+ "modified": "2024-03-12 05:24:04.594302",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Fee Components",

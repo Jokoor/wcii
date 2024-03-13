@@ -44,10 +44,11 @@
    "label": "file_id"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-02-08 16:21:48.601319",
+ "modified": "2024-03-12 05:23:57.459360",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Resources",

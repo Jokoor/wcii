@@ -2,7 +2,14 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Payments', {
-	// refresh: function(frm) {
-
-	// }
+	//qurey the only the fees that are not paid and not draft
+	refresh: function(frm) {
+		frm.set_query('fee', () => {
+			return {
+				filters: [
+					['Fees', 'status', 'in', ['Partly-paid', 'Unpaid', 'Overdue']]
+				]
+			};
+		});
+	},
 });

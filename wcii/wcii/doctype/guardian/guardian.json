@@ -80,9 +80,10 @@
    "label": "Students"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-06 13:27:51.255400",
+ "modified": "2024-03-12 05:23:53.896043",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Guardian",

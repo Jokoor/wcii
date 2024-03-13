@@ -78,10 +78,11 @@
    "label": "Acdemic Year"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-02-07 07:27:04.427942",
+ "modified": "2024-03-12 05:23:58.814042",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Student Report Modules",

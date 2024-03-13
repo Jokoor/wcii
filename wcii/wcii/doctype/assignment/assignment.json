@@ -1,38 +1,26 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "hash",
  "creation": "2024-01-27 14:57:36.516361",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "date",
-  "academic_term",
+  "assignment_name",
+  "due_date",
   "assessment_type",
   "column_break_elaou",
-  "class",
-  "academic_year",
+  "class_id",
   "attachment",
   "column_break_tdn0s",
   "description",
   "route",
-  "publish",
-  "submissions_tab",
-  "submissions"
+  "published",
+  "section_break_wihl",
+  "amended_from"
  ],
  "fields": [
-  {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date"
-  },
-  {
-   "fieldname": "academic_term",
-   "fieldtype": "Link",
-   "label": "Academic Term",
-   "options": "Academic Term"
-  },
   {
    "fieldname": "assessment_type",
    "fieldtype": "Select",
@@ -42,17 +30,6 @@
   {
    "fieldname": "column_break_elaou",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "class",
-   "fieldtype": "Data",
-   "label": "Class"
-  },
-  {
-   "fieldname": "academic_year",
-   "fieldtype": "Link",
-   "label": "Academic Year",
-   "options": "Academic Year"
   },
   {
    "fieldname": "attachment",
@@ -69,36 +46,58 @@
    "label": "Description"
   },
   {
-   "fieldname": "submissions_tab",
-   "fieldtype": "Tab Break",
-   "label": "Submissions"
-  },
-  {
-   "fieldname": "submissions",
-   "fieldtype": "Table",
-   "label": "Submissions",
-   "options": "Assignment Submissions"
-  },
-  {
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route"
   },
   {
    "default": "0",
-   "fieldname": "publish",
+   "fieldname": "published",
    "fieldtype": "Check",
-   "label": "Publish"
+   "label": "Published"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Assignment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Date of Submission"
+  },
+  {
+   "fieldname": "class_id",
+   "fieldtype": "Link",
+   "label": "Class",
+   "options": "Class"
+  },
+  {
+   "fieldname": "assignment_name",
+   "fieldtype": "Data",
+   "label": "Assignment Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_wihl",
+   "fieldtype": "Section Break"
   }
  ],
  "has_web_view": 1,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
- "is_published_field": "publish",
+ "is_published_field": "published",
  "links": [],
- "modified": "2024-03-09 13:52:40.329249",
+ "modified": "2024-03-13 04:33:12.013022",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Assignment",
+ "naming_rule": "Random",
  "owner": "Administrator",
  "permissions": [
   {
@@ -145,5 +144,6 @@
  "route": "route",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "assignment_name"
 }

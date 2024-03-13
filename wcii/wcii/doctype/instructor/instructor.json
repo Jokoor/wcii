@@ -190,9 +190,10 @@
    "label": "Country"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-06 13:21:55.527839",
+ "modified": "2024-03-12 05:23:55.901565",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Instructor",

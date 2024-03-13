@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:ENR-####",
  "creation": "2023-12-11 20:48:20.240602",
  "default_view": "List",
  "doctype": "DocType",
@@ -11,7 +12,8 @@
   "column_break_0jvag",
   "academic_year",
   "section_break_semqg",
-  "students"
+  "students",
+  "amended_from"
  ],
  "fields": [
   {
@@ -39,14 +41,27 @@
    "fieldtype": "Table",
    "label": "Students",
    "options": "Students Enrollment List"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Course Enrollment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-03-06 13:26:47.802692",
+ "modified": "2024-03-12 05:23:44.465476",
  "modified_by": "Administrator",
  "module": "Wcii",
- "name": "Enrollment",
+ "name": "Course Enrollment",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

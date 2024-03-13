@@ -53,9 +53,10 @@
    "read_only": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-27 17:56:46.657278",
+ "modified": "2024-03-12 05:24:02.276536",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Attendance",

@@ -7,28 +7,43 @@
  "engine": "InnoDB",
  "field_order": [
   "fee",
-  "fee_type"
+  "fee_type",
+  "amount",
+  "fee_status"
  ],
  "fields": [
   {
    "fieldname": "fee",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Fee",
-   "options": "Fees"
+   "label": "Fee"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "options": "Company:company:default_currency",
+   "precision": "2"
   },
   {
    "fieldname": "fee_type",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Amount",
-   "options": "Company:company:default_currency"
+   "label": "Fee Type"
+  },
+  {
+   "fieldname": "fee_status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Status"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-05 04:50:37.959722",
+ "modified": "2024-03-12 05:23:46.655556",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Student Fees",

@@ -30,10 +30,11 @@
    "label": "Grade"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-01-27 15:07:49.681158",
+ "modified": "2024-03-12 05:24:02.735777",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Student Grades",

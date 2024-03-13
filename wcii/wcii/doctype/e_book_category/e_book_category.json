@@ -24,13 +24,13 @@
    "unique": 1
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-08 07:37:00.499316",
+ "modified": "2024-03-12 05:23:52.252607",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "E-Book Category",
- "name_case": "Title Case",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

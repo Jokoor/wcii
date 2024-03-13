@@ -1,7 +1,26 @@
 {% extends "templates/web.html" %}
 
 {% block page_content %}
-<h1>{{ title }}</h1>
+<div class="d-flex justify-between">
+    <h3>{{ assignment.assignment_name }}</h3>
+    <h6> Assignment ID: {{assignment.name}}</h6>
+
+
+</div>
+
+<div class="card mb-4">
+    <div class="card-body ">
+      <p> {{assignment.description}} </p>
+    </div>
+</div>
+        <p class="card-text"> <strong>Submission Date: </strong>{{ assignment.due_date }}</p>
+        <a href="submit-assignment/new" class="btn btn-primary">Submit Assignment</a>
+    
+
+
+
+
+
 {% endblock %}
 
-<!-- this is a sample default web page template -->
+

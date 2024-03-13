@@ -1,0 +1,37 @@
+<!-- assignment -->
+<!-- include web template -->
+
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h3>Assignments</h3>
+
+ {% set user = frappe.db.get_value("User", frappe.session.user, "username") %}
+<!-- get studetn name -->
+{% set student = frappe.get_doc("Student", user) %}
+
+<!-- get student classes -->
+{% set classes = student.classes %}
+<!-- check if student is in classes -->
+{% for class in classes %}
+    {% set class_name = class.class_name %}
+    {% set class = frappe.get_doc("Class", class_name) %}
+   {% set assignments = frappe.get_all("Assignment", filters={'class_id':class_name}, fields=["*"])  %}
+    {% for assignment in assignments %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{ assignment.assignment_name }}</h5>
+                <p class=""> <strong>Submission Date: </strong>{{ assignment.due_date }}</p>
+                <p class="card-text">Assignment ID: {{ assignment.name }}</p>
+                <a href="{{ assignment.route }}" class="btn btn-primary">Go to assignment</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endfor %}
+
+
+
+
+{% endblock %}
+
+

@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:student",
+ "autoname": "format:{student}",
  "creation": "2024-02-07 05:45:08.378913",
  "default_view": "List",
  "doctype": "DocType",
@@ -27,9 +27,11 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "student.first_name",
+   "fetch_from": "student.full_name",
    "fieldname": "student_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Student Name"
   },
   {
@@ -44,13 +46,15 @@
    "read_only": 1
   }
  ],
+ "hide_toolbar": 1,
+ "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-08 01:08:53.584156",
+ "modified": "2024-03-13 05:39:09.528825",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Student Report",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -62,6 +66,42 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "School Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Instructor",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Student",
    "share": 1,
    "write": 1
   }

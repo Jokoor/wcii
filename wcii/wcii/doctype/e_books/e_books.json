@@ -21,9 +21,7 @@
   "file_url",
   "image",
   "published",
-  "route",
-  "book_content",
-  "content"
+  "route"
  ],
  "fields": [
   {
@@ -93,23 +91,14 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route"
-  },
-  {
-   "fieldname": "book_content",
-   "fieldtype": "HTML",
-   "label": "Book Content"
-  },
-  {
-   "fieldname": "content",
-   "fieldtype": "HTML Editor",
-   "label": "Content"
   }
  ],
  "has_web_view": 1,
+ "hide_toolbar": 1,
  "image_field": "image",
  "is_published_field": "published",
  "links": [],
- "modified": "2024-03-07 19:42:49.145647",
+ "modified": "2024-03-12 05:23:56.549612",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "E-Books",
