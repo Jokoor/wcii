@@ -17,7 +17,13 @@
     {% set class_name = class.class_name %}
     {% set class = frappe.get_doc("Class", class_name) %}
    {% set assignments = frappe.get_all("Assignment", filters={'class_id':class_name}, fields=["*"])  %}
-    {% for assignment in assignments %}
+   check if there are assignments
+    {% if not assignments %}
+        <div class="alert alert-warning" role="alert">
+            No assignments found
+        </div>
+    {% endif %} 
+   {% for assignment in assignments %}
         <div class="card mb-4">
             <div class="card-body">
                 <h5 class="card-title">{{ assignment.assignment_name }}</h5>

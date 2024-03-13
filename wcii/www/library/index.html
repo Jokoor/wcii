@@ -8,7 +8,6 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Library</h1>
             <div class="d-flex flex-wrap">
                 {% set books = frappe.get_all('E-Books', fields=['file_name', 'image', 'web_view_link']) %}
                <!-- check if books -->
@@ -21,7 +20,7 @@
 
                 {% for book in books %}
 
-                <div class="col-md-3 mb-3">
+                <div class="col-md-2 mb-3">
                     <div class="card shadow hover">
                         <img src="{{ book.image }}" class="card-img-top" alt="..." style="max-height: 200px;">
                         <div class="card-body p-2">
