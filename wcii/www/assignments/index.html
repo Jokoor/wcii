@@ -16,6 +16,12 @@
 {% for class in classes %}
     {% set class_name = class.class_name %}
     {% set class = frappe.get_doc("Class", class_name) %}
+    check if class is active
+    {% if not class.active %}
+        <div class="alert alert-warning" role="alert">
+            Class {{ class_name }} is not active
+        </div>
+    {% endif %}
    {% set assignments = frappe.get_all("Assignment", filters={'class_id':class_name}, fields=["*"])  %}
    check if there are assignments
     {% if not assignments %}
