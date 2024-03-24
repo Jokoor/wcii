@@ -1,42 +1,198 @@
 {% extends "templates/web.html" %}
 
+{% block style %}
+<link rel="stylesheet" href="/assets/wcii/css/tailwind.css">
+{% endblock style %}
 
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script src="//unpkg.com/alpinejs" defer></script>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('dropdown', () => ({
+            open: false,
 
-    
+            toggle() {
+                this.open = !this.open
+            }
+        }))
+    })
+    const createEffect = (...initialDeps) => {
+        let diff = JSON.stringify(initialDeps);
+
+        return (callback, deps) => {
+            if (JSON.stringify(deps) !== diff) {
+                diff = JSON.stringify(deps);
+                return callback();
+            } else if (!deps) {
+                diff = '';
+            }
+        };
+    };
+
+    const booksEffect = createEffect()
+
+    function mergeKeysAndValues(response) {
+        if (!response.message) return [];
+        const { keys, values } = response.message;
+        if (!keys || !values) return [];
+        return values.map(valueArray =>
+            valueArray.reduce((acc, curr, index) => {
+                const key = keys[index];
+                acc[key] = curr === null ? "" : curr; // Convert null values to empty strings
+                return acc;
+            }, {})
+        );
+    }
+
+    const fetchBooks = async ({ offset, limit, category, search }) => {
+        const path = '/api/method/frappe.desk.reportview.get'
+        const fullUrl = location.origin + path
+        const searchFilter = search ? `["file_name", "like", "%${search}%"]` : ''
+        const categoryFilter = category ? `, ["category", "=", "${category}"]` : ''
+        const body = `doctype=E-Books&fields=["file_name","image","web_view_link","category"]&order_by=file_name asc&start=${offset}&page_length=${limit}&filters=[${searchFilter}${categoryFilter}]`
+
+        const res = await fetch(fullUrl, {
+            body,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "X-Frappe-Csrf-Token": frappe.csrf_token
+            }
+        })
+
+        const resJson = await res.json()
+
+        const booksArr = mergeKeysAndValues(resJson)
+
+        console.log({ resJson, booksArr })
+    }
+
+</script>
+{% endblock script %}
+
 {% block page_content %}
+<div style="display: none;">{% set _books = frappe.get_all('E-Books', fields=['file_name', 'image', 'web_view_link',
+    'category'], filters={},
+    order_by='file_name asc', start=0, page_length=1000) %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="d-flex flex-wrap">
-                {% set books = frappe.get_all('E-Books', fields=['file_name', 'image', 'web_view_link']) %}
-               <!-- check if books -->
-               {% if not books %}
-                <div class="alert alert-warning" role="alert">
-                     No books found
+    {% set categories = frappe.get_all('E-Book Category', fields=['name']) %}
+
+    {% set books=[] %}
+
+    {% for _item in _books %}
+    {% set item={} %}
+    {% for key in _item %}
+    {% set _ = item.update({key: _item[key] or ""}) %}
+
+    {% endfor %}
+    {{ books.append(item) }}
+    {% endfor %}
+
+</div>
+<div x-data="{
+        search: '',
+        category: '',
+        limit: 1000,
+        offset: 0,
+        dataLength: 1000,
+        loading: false,
+ 
+        initialItems: {{ books }},
+        items:[],
+        categories: {{ categories }},
+        next() {
+            this.offset = Math.min(this.offset + this.limit, this.dataLength)
+        },
+        prev() {
+            this.offset = Math.max(this.offset - this.limit, 0)
+        },
+ 
+        async filterItems() {
+            const deps=[this.search,this.limit,this.offset,this.category]
+            const canProceed = booksEffect(()=>true,deps)
+            console.log('canProceed',canProceed,deps)
+            if(!canProceed) return
+
+            fetchBooks(this)
+
+             this.items= this.initialItems?.filter(
+                i => i.file_name.includes(this.search)
+            )
+            dataLength=this.items.length
+            console.log('dataLength', dataLength,this.items)
+            return this.items
+        }
+    }" x-effect="filterItems()" class="bg-gray-100 py-2 rounded">
+
+    <div class="flex flex-col gap-2 w-full sticky top-0 z-10 p-2 bg-gray-100">
+        <div class="flex gap-4 justify-between items-end">
+            <div class="grid gap-4 grid-cols-2 flex-grow">
+                <div>
+                    <label for="search-ebooks" class="mb-2 text-sm font-medium text-gray-900">Search Ebooks</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="search" id="search-ebooks" x-model="search"
+                            class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Start typing ebook name" />
+                    </div>
                 </div>
-                {% endif %}
-            
+                <div class="">
+                    <label for="select-category" class="block mb-2 text-sm font-medium text-gray-900">Select
+                        category</label>
+                    <select id="select-category" x-model="category"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4">
+                        <option selected value="">All categories</option>
+                        <template x-for="_category in categories" :key="_category.name">
+                            <option :value="_category.name" x-text="_category.name"></option>
+                        </template>
+                    </select>
+                </div>
+            </div>
+            <div class="flex gap-3 items-center ">
+                <button @click="prev()" :disabled="loading || offset==0" class="text-xs leading-5 font-semibold uppercase bg-[#CBD5E1]/50 rounded-full py-1 px-4 flex items-center
+                    space-x-2 hover:bg-[#CBD5E1] select-none" type="button">prev</button>
+                <button @click="next()" :disabled="loading || dataLength <=limit"
+                    class="text-xs leading-5 font-semibold uppercase bg-[#CBD5E1]/50 rounded-full py-1 px-4 flex items-center space-x-2 hover:bg-[#CBD5E1] select-none"
+                    type="button">next</button>
+            </div>
+        </div>
+        <div class="text-sm text-gray-500 self-end">
+            <span x-text="items.length"></span> E-books found
+        </div>
+    </div>
 
-                {% for book in books %}
-
-                <div class="col-md-6 mb-3">
-                    <div class="card shadow hover">
-                        <img src="{{ book.image }}" class="card-img-top" alt="..." style="max-height: 200px;">
-                        <div class="card-body p-2">
-                            <p class="card-title text-center">{{ book.file_name }}</p>
-                            <a href="{{ book.web_view_link }}" class="stretched-link" target="_blank" ></a>
+    <div class="gap-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-2 basis-[300px] flex-wrap">
+        <template x-for="ebook in items" :key="ebook.web_view_link">
+            <a :href="ebook.web_view_link" target="_blank"
+                class="card  p-3 !shadow-none hover:!shadow-xl transition-shadow duration-300 max-w-max">
+                <p
+                    class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded select-none cursor-pointer">
+                    <span class="truncate max-w-full block !text-[10px]" x-text="ebook.category"></span>
+                </p>
+                <div class="flex flex-col justify-center gap-2 mt-2 group h-max">
+                    <img class="rounded object-contain w-full h-[100px] md:h-[200px] min-h-[100px] bg-slate-300 group-hover:shadow-sm transition-shadow duration-300"
+                        :src="ebook.image" alt="" />
+                    <div class="flex flex-col gap-2 group-hover:text-primary-500">
+                        <div class="text-sm font-medium text-gray-900 group-hover:text-primary-700 break-words"
+                            x-text="ebook.file_name">
                         </div>
                     </div>
                 </div>
-                {% endfor %}
-            </div>
-        </div>
     </div>
+    </template>
+</div>
+
 </div>
 
 <style>
-    .card.hover:hover {
+    .card:hover {
         transform: translateY(-5px);
         transition: transform 0.3s ease-in-out;
     }

@@ -7,22 +7,34 @@ from frappe.model.document import Document
 
 class Student(Document):
     def validate(self):
-        self.student_id = self.name
+        # self.student_id = self.name
         frappe.db.set_value("User", self.email_address, "username", self.student_id)
     
     def after_insert(self):
         self.create_user()
-        self.send_email()
-        self.create_student_report()
+        # self.send_email()
+        # self.create_student_report()
         
     #set auto name for student
     def autoname(self):
-        prefix = frappe.db.get_single_value("School Settings", "institution_code_prefix")
-        register_no_start_from = frappe.db.get_single_value("School Settings", "register_no_start_from")
-        register_digit = frappe.db.get_single_value("School Settings", "register_no_digit")
+        try:
+            prefix = frappe.db.get_single_value("School Settings", "institution_code_prefix")     
+            register_no_start_from = frappe.db.get_single_value("School Settings", "register_no_start_from")
+            register_digit = frappe.db.get_single_value("School Settings", "register_no_digit")
+        except Exception as e:
+            frappe.msgprint('Exception:::'+str(e))
+        finally:
+            pass
+            # frappe.msgprint(f"""
+            # prefix : {prefix}
+            # register_no_start_from: {register_no_start_from}
+            # register_digit: {register_digit}
+            # """)
+            
         #get the last student
         zeros = "0" * (int(register_digit) -1)
         last_student = frappe.get_last_doc("Student")
+        frappe.msgprint('last_student',last_student.name,zeros)
         if last_student:
             last_student = int(last_student.student_id.split("-")[-1])
             self.student_id = f"{prefix}-{zeros}{last_student + 1}"

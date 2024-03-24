@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_guest_to_view": 1,
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:id",
  "creation": "2024-01-06 23:24:04.658761",
@@ -98,7 +99,7 @@
  "image_field": "image",
  "is_published_field": "published",
  "links": [],
- "modified": "2024-03-12 05:23:56.549612",
+ "modified": "2024-03-17 02:36:29.129210",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "E-Books",
