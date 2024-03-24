@@ -11,7 +11,6 @@
   "description",
   "column_break_kbpqt",
   "module_code",
-  "course",
   "resources_tab",
   "resources"
  ],
@@ -42,12 +41,6 @@
    "options": "Resources"
   },
   {
-   "fieldname": "course",
-   "fieldtype": "Link",
-   "label": "Course",
-   "options": "Course"
-  },
-  {
    "fieldname": "module_code",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -59,7 +52,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-12 05:23:48.052372",
+ "modified": "2024-03-24 01:31:32.300766",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Module",

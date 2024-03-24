@@ -111,11 +111,23 @@
 
 opened: '',
 open: function (item) {
+	if (this.opened == item.label) {
+	this.opened = '';
+	return;
+}
   this.opened = item.label;
   console.log(item);
 },
 activeLink: window.location.pathname,
 init: function() {
+// set opened to the current route parent label
+for (let item of this.items) {
+	for (let subItem of item.subItems) {
+		if (subItem.href == this.activeLink) {
+			this.opened = item.label;
+		}
+	}
+}
 
 // Listen for your custom events
 window.addEventListener('locationchange', function() {
@@ -131,66 +143,46 @@ window.addEventListener('locationchange', function() {
 }
 }
 "
-  class="h-full overflow-y-auto"
+  class="h-full overflow-y-auto py-2"
 >
-  <ul class="space-y-2 font-medium">
+  <ul class="list-unstyled ps-0">
     <template x-for="item in items">
       <li>
         <button
-          x-on:click="open(item)"
           type="button"
-          class="flex items-center w-full p-2 text-sm text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100"
-          aria-controls="dropdown-example"
-          data-collapse-toggle="dropdown-example"
+          x-on:click="open(item)"
+          style="max-width: 100%"
+          class="btn btn-toggle align-items-center rounded"
+          data-bs-toggle="collapse"
+          :data-bs-target="'#sidebar-'+item.label"
+          :aria-expanded="String(item.label==opened)"
         >
-          <svg
-            class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 18 21"
-          >
-            <path
-              d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"
-            />
-          </svg>
           <span
             x-text="item.label"
-            class="flex-1 ms-3 text-left truncate whitespace-nowrap"
+            class="flex-1 ms-3 text-left truncate whitespace-nowrap w-full"
           />
-          <svg
-            class="w-3 h-3"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 10 6"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m1 1 4 4 4-4"
-            />
-          </svg>
         </button>
         <template x-if="item.subItems?.length">
-          <ul
+          <div
             x-show="item.label==opened"
             x-transition
-            class="py-2 space-y-2 pl-4"
+            :id="'sidebar-'+item.label"
+            class="collapse show"
           >
-            <template x-for="subItem in item.subItems">
-              <li class="py-1 sub-item">
-                <a
-                  x-bind:href="subItem.href"
-                  x-text="subItem.label"
-                  :class="{ 'bg-gray-100': activeLink==subItem.href }"
-                  class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
-                ></a>
-              </li>
-            </template>
-          </ul>
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <template x-for="subItem in item.subItems">
+                <li class="py-1 sub-item">
+                  <a
+                    x-bind:href="subItem.href"
+                    x-text="subItem.label"
+                    :title="subItem.label"
+                    :class="{ 'bg-gray-100': activeLink==subItem.href }"
+                    class="link-dark rounded truncate"
+                  ></a>
+                </li>
+              </template>
+            </ul>
+          </div>
         </template>
       </li>
     </template>

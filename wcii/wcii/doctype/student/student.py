@@ -7,11 +7,12 @@ from frappe.model.document import Document
 
 class Student(Document):
     def validate(self):
-        # self.student_id = self.name
-        frappe.db.set_value("User", self.email_address, "username", self.student_id)
+        self.student_id = self.name
+        
     
     def after_insert(self):
         self.create_user()
+        frappe.db.set_value("User", self.email_address, "username", self.student_id)
         # self.send_email()
         # self.create_student_report()
         
@@ -25,11 +26,11 @@ class Student(Document):
             frappe.msgprint('Exception:::'+str(e))
         finally:
             pass
-            # frappe.msgprint(f"""
-            # prefix : {prefix}
-            # register_no_start_from: {register_no_start_from}
-            # register_digit: {register_digit}
-            # """)
+            frappe.msgprint(f"""
+            prefix : {prefix}
+            register_no_start_from: {register_no_start_from}
+            register_digit: {register_digit}
+            """)
             
         #get the last student
         zeros = "0" * (int(register_digit) -1)

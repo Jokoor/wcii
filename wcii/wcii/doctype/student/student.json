@@ -1,6 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "format:WCII-{####}",
  "creation": "2023-12-04 17:09:56.928038",
  "default_view": "List",
  "doctype": "DocType",
@@ -280,10 +280,11 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-13 03:14:29.059835",
+ "modified": "2024-03-24 14:47:16.068346",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Student",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

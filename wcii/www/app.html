@@ -25,7 +25,7 @@
 	{{ include_style(include) }}
 	{%- endfor -%}
 
-	<link rel="stylesheet" href="/assets/wcii/css/tailwind.css">
+	<link rel="stylesheet" href="/assets/wcii/css/sidebar.css">
 	<style>
 		.standard-sidebar-section.nested-container,
 		.layout-side-section {
@@ -33,6 +33,8 @@
 			visibility: hidden !important;
 		}
 
+		.custom-actions,
+		.menu-btn-group,
 		.sidebar-toggle-btn {
 			display: none !important;
 		}
@@ -61,6 +63,11 @@
 		.editable-form>.container {
 			padding-left: 17%;
 		}
+
+		.list-unstyled {
+			padding-left: 0;
+			list-style: none;
+		}
 	</style>
 </head>
 
@@ -72,7 +79,8 @@
 		</div>
 		<footer></footer>
 	</div>
-	<div style="top: 108px; left: -4px;" class="container fixed inset-x-0 top-[108px] w-full h-screen" x-data="sidebar">
+	<div style="top: calc(var(--navbar-height) + var(--page-head-height)); left: -4px; right: 0px;height:calc(100vh - var(--navbar-height) - var(--page-head-height) - 5px);"
+		class="container position-fixed w-full" x-data="sidebar">
 		<template x-if="loaded">
 			<aside id="sidebar-multi-level-sidebar" style="width:17%;"
 				class="h-screen x-layout-side-section z-40 bg-white border-r border-gray-200" aria-label="Sidebar">
