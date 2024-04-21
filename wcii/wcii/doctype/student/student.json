@@ -1,6 +1,7 @@
 {
  "actions": [],
- "autoname": "format:WCII-{####}",
+ "allow_rename": 1,
+ "autoname": "field:student_id",
  "creation": "2023-12-04 17:09:56.928038",
  "default_view": "List",
  "doctype": "DocType",
@@ -24,17 +25,21 @@
   "email_address",
   "date_of_birth",
   "blood_group",
+  "address_line_1",
+  "country",
   "column_break_lw8op",
   "mobile_number",
   "gender",
   "nationality",
-  "address_line_1",
   "address_line_2",
   "region",
-  "country",
   "tab_break_tab",
   "guardian_details_section",
-  "guardians",
+  "guadian_name",
+  "address",
+  "column_break_smqd",
+  "contact",
+  "relationship",
   "program_courses_tab",
   "courses",
   "section_break_wsd8i",
@@ -136,12 +141,6 @@
    "fieldname": "guardian_details_section",
    "fieldtype": "Section Break",
    "label": "Guardian Details"
-  },
-  {
-   "fieldname": "guardians",
-   "fieldtype": "Table",
-   "label": "Guardians",
-   "options": "Student Guardian"
   },
   {
    "fieldname": "exit_tab",
@@ -260,7 +259,7 @@
    "fieldname": "student_id",
    "fieldtype": "Data",
    "label": "Student ID",
-   "read_only": 1
+   "unique": 1
   },
   {
    "fieldname": "column_break_gkqz",
@@ -275,16 +274,41 @@
    "fieldtype": "Table",
    "label": "Classes",
    "options": "Student Classess"
+  },
+  {
+   "fieldname": "guadian_name",
+   "fieldtype": "Data",
+   "label": "Guadian Name"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_break_smqd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "relationship",
+   "fieldtype": "Select",
+   "label": "Relationship",
+   "options": "\nFather\nMother\nUncle\nAunt\nSister\nBrother\nOher"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-24 14:47:16.068346",
+ "modified": "2024-04-21 04:54:01.398859",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Student",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

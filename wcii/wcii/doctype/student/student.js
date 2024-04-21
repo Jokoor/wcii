@@ -3,6 +3,13 @@
 
 frappe.ui.form.on('Student', {
 	refresh: function(frm) {
+
+		//hide the student enable check if document is new
+		if (frm.doc.__islocal) {
+			frm.toggle_display('enabled', false);
+		}
+
+
 		//add custom button to enroll student
 		frm.add_custom_button('Enroll Student', () => {
 			//open modal to select course
@@ -36,6 +43,7 @@ frappe.ui.form.on('Student', {
 	},
 	first_name: function(frm) {
 		full_name(frm);
+		email(frm);
 
 	},
 	middle_name: function(frm) {
@@ -43,10 +51,13 @@ frappe.ui.form.on('Student', {
 	},
 	last_name: function(frm) {
 		full_name(frm);
+		email(frm);
 	},
+	
 });
 
 function full_name(frm) {
 		//set the full name from the first name, middle name and last name
 		frm.set_value('full_name', `${frm.doc.first_name || ''} ${frm.doc.middle_name || ''} ${frm.doc.last_name || ''}`);	
 }
+

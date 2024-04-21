@@ -7,42 +7,47 @@ from frappe.model.document import Document
 
 class Student(Document):
     def validate(self):
-        self.student_id = self.name
+        #get student password and set it for the user
+        # psswd = self.get_password(self.password)
+        # if frappe.db.exists("User", self.email_address):
+        #     frappe.db.set_value("User", self.email_address, "password", psswd)
+            
+        
+
+
+        #set studennt email base on thier student id and first letter of thier first name and lastname
+        if not self.email_address:
+            self.email_address = f"{self.first_name[0].lower()}{self.last_name[0].lower()}{self.student_id}@wcii.gm"  
         
     
     def after_insert(self):
         self.create_user()
         frappe.db.set_value("User", self.email_address, "username", self.student_id)
         # self.send_email()
-        # self.create_student_report()
+        self.create_student_report()
         
     #set auto name for student
-    def autoname(self):
-        try:
-            prefix = frappe.db.get_single_value("School Settings", "institution_code_prefix")     
-            register_no_start_from = frappe.db.get_single_value("School Settings", "register_no_start_from")
-            register_digit = frappe.db.get_single_value("School Settings", "register_no_digit")
-        except Exception as e:
-            frappe.msgprint('Exception:::'+str(e))
-        finally:
-            pass
-            frappe.msgprint(f"""
-            prefix : {prefix}
-            register_no_start_from: {register_no_start_from}
-            register_digit: {register_digit}
-            """)
+    # def autoname(self):
+        
+    #     prefix = frappe.db.get_single_value("School Settings", "institution_code_prefix")     
+    #     register_no_start_from = frappe.db.get_single_value("School Settings", "start_from")
+    #     register_digit = frappe.db.get_single_value("School Settings", "register_no_digit")
+    #     if  prefix:
+    #         frappe.throw(prefix, register_no_start_from, register_digit)
+
+           
             
-        #get the last student
-        zeros = "0" * (int(register_digit) -1)
-        last_student = frappe.get_last_doc("Student")
-        frappe.msgprint('last_student',last_student.name,zeros)
-        if last_student:
-            last_student = int(last_student.student_id.split("-")[-1])
-            self.student_id = f"{prefix}-{zeros}{last_student + 1}"
-            self.name = self.student_id
-        else:
-            self.student_id = f"{prefix}-{zeros}{register_no_start_from}"
-            self.name = self.student_id
+    #     # #get the last student
+    #     # zeros = "0" * (int(register_digit) -1)
+    #     # last_student = frappe.get_last_doc("Student")
+    #     # frappe.msgprint('last_student',last_student.name,zeros)
+    #     # if last_student:
+    #     #     last_student = int(last_student.student_id.split("-")[-1])
+    #     #     self.student_id = f"{prefix}-{zeros}{last_student + 1}"
+    #     #     self.name = self.student_id
+    #     # else:
+    #     #     self.student_id = f"{prefix}-{zeros}{register_no_start_from}"
+    #     #     self.name = self.student_id
 
 
 
@@ -122,3 +127,7 @@ def enroll_student(student, course):
         student.save(ignore_permissions=True)
         frappe.msgprint(f"{student.full_name} has been enrolled to {course_doc.course_name} successfully")
             
+@frappe.whitelist()
+def set_student_email(student):
+    student = frappe.get_doc("Student", student)
+    student.email_address = f"{student.first_name[0].lower()}{student.last_name.lower()}{student.student_id}@wcii.gm"

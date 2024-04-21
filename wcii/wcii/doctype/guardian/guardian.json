@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{guardian_name}",
  "creation": "2023-12-04 17:18:39.242820",
  "default_view": "List",
  "doctype": "DocType",
@@ -83,10 +84,11 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-12 05:23:53.896043",
+ "modified": "2024-03-27 22:47:49.289148",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Guardian",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -135,7 +137,9 @@
    "share": 1
   }
  ],
+ "search_fields": "guardian_name",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "mobile_number"
 }

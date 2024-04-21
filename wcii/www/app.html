@@ -33,10 +33,16 @@
 			visibility: hidden !important;
 		}
 
-		.custom-actions,
-		.menu-btn-group,
+		/* .menu-btn-group, */
 		.sidebar-toggle-btn {
 			display: none !important;
+		}
+				.custom-actions button{
+			display: none !important;
+
+				}
+		.custom-actions button[data-label]{
+			display: flex !important;
 		}
 
 		.truncate {
@@ -56,9 +62,9 @@
 			top: var(--navbar-height) !important;
 		}
 
-		.layout-main-section-wrapper {
+		/* .layout-main-section-wrapper {
 			z-index: 1;
-		}
+		} */
 
 		.editable-form>.container {
 			padding-left: 17%;
@@ -68,6 +74,35 @@
 			padding-left: 0;
 			list-style: none;
 		}
+
+		.main-sidebar{
+			--max-width: 100%;
+			left: calc(calc(100vw - var(--max-width))/2);
+		}
+
+		@media (min-width: 576px){
+			.main-sidebar{
+				--max-width: 540px;
+			}
+		}
+
+		@media (min-width: 768px){
+			.main-sidebar{
+				--max-width: 840px
+			}
+		}
+		@media (min-width: 992px){
+			.main-sidebar{
+				--max-width: 1090px
+			}
+		}
+		@media (min-width: 1200px){
+			.main-sidebar{
+				--max-width: 1290px
+			}
+		}
+
+
 	</style>
 </head>
 
@@ -79,10 +114,10 @@
 		</div>
 		<footer></footer>
 	</div>
-	<div style="top: calc(var(--navbar-height) + var(--page-head-height)); left: -4px; right: 0px;height:calc(100vh - var(--navbar-height) - var(--page-head-height) - 5px);"
-		class="container position-fixed w-full" x-data="sidebar">
+	<div style="top: calc(var(--navbar-height) + var(--page-head-height)); height:calc(100vh - var(--navbar-height) - var(--page-head-height) - 5px);"
+		class="main-sidebar position-fixed w-full" x-data="sidebar">
 		<template x-if="loaded">
-			<aside id="sidebar-multi-level-sidebar" style="width:17%;"
+			<aside id="sidebar-multi-level-sidebar" style="width:100%;"
 				class="h-screen x-layout-side-section z-40 bg-white border-r border-gray-200" aria-label="Sidebar">
 				{% include "templates/includes/sidebar.html" %}
 			</aside>

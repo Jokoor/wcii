@@ -1,1 +1,0 @@
-export const env={"PUBLIC_API_URL":"https://app.wcii.com"}

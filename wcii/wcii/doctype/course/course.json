@@ -28,7 +28,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Level",
-   "options": "\n4\n5"
+   "options": "\n3\n4\n5"
   },
   {
    "fieldname": "section_break_fqecv",
@@ -70,7 +70,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-12 05:23:50.277343",
+ "modified": "2024-04-06 13:52:26.202940",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Course",

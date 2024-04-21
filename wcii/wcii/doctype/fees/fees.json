@@ -8,6 +8,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "fee_details_section",
   "student",
   "student_name",
   "column_break_wvsxm",
@@ -20,7 +21,9 @@
   "paid_amount",
   "outstanding_amount",
   "status",
-  "amended_from"
+  "amended_from",
+  "payment_history_tab",
+  "payment_history"
  ],
  "fields": [
   {
@@ -105,13 +108,29 @@
    "fieldname": "due_date",
    "fieldtype": "Date",
    "label": "Due Date"
+  },
+  {
+   "fieldname": "fee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Fee Details"
+  },
+  {
+   "fieldname": "payment_history_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payment History"
+  },
+  {
+   "fieldname": "payment_history",
+   "fieldtype": "Table",
+   "label": "Payment History",
+   "options": "Payment History"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-12 05:23:45.867585",
+ "modified": "2024-03-24 15:43:31.799840",
  "modified_by": "Administrator",
  "module": "Wcii",
  "name": "Fees",
